@@ -412,7 +412,7 @@ export default function Home() {
               <div className="type-line"><span className="type-label">I’m a</span><strong>{taglineText}<b aria-hidden="true" /></strong></div>
               <div className="hero-actions">
                 <button className="button button--gold" type="button" onClick={() => scrollTo("projects")}>View my work <ArrowUpRight size={16} /></button>
-                <a className="button button--ghost" href={CV_PLACEHOLDER} download>Download CV <FileText size={16} /></a>
+                <a className="button button--ghost" href={CV_PLACEHOLDER} download aria-label="Download CV PDF">Download CV <FileText size={16} /></a>
               </div>
               <div className="hero-note"><span className="note-dot" /> Available for thoughtful collaborations</div>
               <div className="asset-note">Temporary CV PDF in place · replace it with your final file when ready.</div>
@@ -526,10 +526,10 @@ export default function Home() {
                 return <article className={`project-card reveal reveal-delay-${Math.min((index % 3) + 1, 3)} ${open ? "is-open" : ""}`} key={project.title} onClick={() => setOpenProject(open ? null : project.title)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") setOpenProject(open ? null : project.title); }} role="button" tabIndex={0} aria-expanded={open}>
                   <div className="project-card-inner">
                     <div className="project-face project-front">
-                      <div className={`project-thumb ${project.thumb ? "project-thumb--image" : ""}`} style={project.thumb ? { backgroundImage: `url(${project.thumb})` } : undefined}><span className="project-thumb-label">{project.label}</span><span className="project-thumb-icon"><Code2 size={20} /></span></div>
+                      <div className={`project-thumb ${project.thumb ? "project-thumb--image" : ""}`} style={project.thumb ? { backgroundImage: `url(${project.thumb})` } : undefined}><span className="project-thumb-label">{project.label}</span><span className="project-thumb-icon"><Code2 size={20} /></span><span className="project-view-button">View Project <ArrowUpRight size={13} /></span></div>
                       <div className="project-info"><div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.meta.split("·")[0].trim()}</span></div><h3>{project.title}</h3><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-proof"><FileText size={12} />{project.proof}</div><div className="project-reveal-hint">Hover or tap to view <Plus size={14} /></div></div>
                     </div>
-                    <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3><p>{project.description}</p><a href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>Open project <ExternalLink size={13} /></a></div>
+                    <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3><p>{project.description}</p><a href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>View Project <ExternalLink size={13} /></a></div>
                   </div>
                 </article>;
               })}
