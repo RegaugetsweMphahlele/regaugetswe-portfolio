@@ -41,9 +41,18 @@ import {
 
 const HERO_TEXTURE = "/manus-storage/regaugetswe-hero-texture_cfa8fe7a.png";
 const PROFILE_PLACEHOLDER = "/manus-storage/regaugetswe-profile-placeholder_e71ca5c7.png";
-const MENACARE_THUMB = "/manus-storage/regaugetswe-project-menacare_7dbdd009.png";
-const CIVICTECH_THUMB = "/manus-storage/regaugetswe-project-civictech_6b013d50.png";
+const MENACARE_THUMB = "/manus-storage/menstrual-health-community_dcbb1b61.jpeg";
+const CIVICTECH_THUMB = "/manus-storage/civic-tech-city_2ec72bd7.jpg";
+const COMMUNITY_THUMB = "/manus-storage/menacare-community_af19e254.jpg";
+const FITNESS_THUMB = "/manus-storage/fitness-studio_fba8d0bd.jpeg";
+const BEAUTY_THUMB = "/manus-storage/beauty-studio_c4b97fa0.jpg";
+const CINEMA_THUMB = "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1200&q=82";
+const MARKETING_THUMB = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=82";
+const CODE_THUMB = "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=82";
+const TASK_THUMB = "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82";
+const TRAVEL_THUMB = "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=82";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
+const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
 
 const navItems = [
   ["Home", "home"],
@@ -84,21 +93,21 @@ const projects = [
     title: "MenaCare",
     meta: "Group · Girlcode Hackathon 2026",
     stack: ["React", "Health-tech", "Community"],
-    description: "An empathetic, youth-friendly menstrual health web application that helps young people track cycles, access age-appropriate education, find community support, and connect with health resources.",
+    description: "An empathetic, youth friendly menstrual health web application that helps young people track cycles, access age appropriate education, find community support, and connect with health resources.",
     link: "https://menacare-hrzae37u.manus.space/",
     thumb: MENACARE_THUMB,
     label: "Hackathon highlight",
-    proof: "Group build / youth health",
+    proof: "Group project / youth health",
   },
   {
     title: "Western Cape Public Hospital Feedback System",
-    meta: "Group · Civic-tech platform",
+    meta: "Group · Civic tech platform",
     stack: ["AI", "Sentiment analysis", "Reporting"],
-    description: "An AI-powered civic-tech platform that gathers public-hospital feedback, identifies recurring issues through sentiment analysis, and produces monthly reports to help prioritise improvements.",
+    description: "An AI powered civic tech platform that gathers public hospital feedback, identifies recurring issues through sentiment analysis, and produces monthly reports to help prioritise improvements.",
     link: "https://wc-hospital-feedback.vercel.app/",
     thumb: CIVICTECH_THUMB,
     label: "Civic intelligence",
-    proof: "Group build / monthly reports",
+    proof: "Group project / monthly reports",
   },
   {
     title: "Vixen Cinema",
@@ -106,37 +115,37 @@ const projects = [
     stack: ["React", "UX", "Admin"],
     description: "A warm, editorial movie-rental experience with responsive browsing, detailed movie pages, watchlists, rental checkout, and an admin dashboard for content management.",
     link: "https://vixencinema-8htb4pqn.manus.space/",
-    thumb: null,
+    thumb: CINEMA_THUMB,
     label: "Product experience",
-    proof: "Group build / admin flow",
+    proof: "Group project / admin flow",
   },
   {
     title: "Ad Luxe Studio",
     meta: "Individual · AI marketing",
     stack: ["AI", "Brand systems", "Web"],
-    description: "An AI-powered marketing platform for small and emerging businesses, generating advertising posters, social content, and websites from a business's own information.",
+    description: "An AI powered marketing platform for small and emerging businesses, generating advertising posters, social content, and websites from a business's own information.",
     link: "https://adluxe-studio-ai.lovable.app/",
-    thumb: null,
+    thumb: MARKETING_THUMB,
     label: "Entrepreneurship",
     proof: "Individual / AI platform",
   },
   {
     title: "Blossom Nail Studio",
-    meta: "Individual · HTML & Tailwind CSS",
+    meta: "Individual · HTML and Tailwind CSS",
     stack: ["HTML", "Tailwind", "Responsive"],
-    description: "A mobile-friendly salon landing page with a floral-inspired identity, service showcase, gallery, and smooth-scroll navigation.",
+    description: "A mobile friendly salon landing page with a floral inspired identity, service showcase, gallery, and smooth scroll navigation.",
     link: "https://regaugetswemphahlele.github.io/blossom-nail-studio/",
-    thumb: null,
-    label: "Brand-led web",
+    thumb: BEAUTY_THUMB,
+    label: "Brand led web",
     proof: "Individual / mobile-first",
   },
   {
     title: "AI Productivity Assistant",
     meta: "Individual · CAPACITI accelerator",
     stack: ["AI", "Dashboard", "Productivity"],
-    description: "A responsive workplace productivity dashboard combining an email generator, meeting-notes summariser, task planner, research assistant, and AI chatbot.",
+    description: "A responsive workplace productivity dashboard combining an email generator, meeting notes summariser, task planner, research assistant, and AI chatbot.",
     link: "https://github.com/RegaugetsweMphahlele/AI-Productivity-Assistant",
-    thumb: null,
+    thumb: CODE_THUMB,
     label: "Applied AI",
     proof: "Individual / five AI tools",
   },
@@ -146,7 +155,7 @@ const projects = [
     stack: ["Python", "CLI", "Validation"],
     description: "A command-line calculator supporting a full range of arithmetic operations with comprehensive error handling and input validation.",
     link: "https://github.com/RegaugetsweMphahlele/Smart-Calculator",
-    thumb: null,
+    thumb: CODE_THUMB,
     label: "Foundations",
     proof: "Individual / validation",
   },
@@ -154,9 +163,9 @@ const projects = [
     title: "EliteGym",
     meta: "Individual · HTML, CSS, JavaScript",
     stack: ["JavaScript", "Interaction", "Fitness"],
-    description: "A fitness-focused website that helps users explore programmes and stay motivated through a clean, energetic layout and interactive JavaScript elements.",
+    description: "A fitness focused website that helps users explore programmes and stay motivated through a clean, energetic layout and interactive JavaScript elements.",
     link: "https://github.com/RegaugetsweMphahlele/EliteGym",
-    thumb: null,
+    thumb: FITNESS_THUMB,
     label: "Interactive web",
     proof: "Individual / JS interaction",
   },
@@ -164,9 +173,9 @@ const projects = [
     title: "Laravel Task Management App",
     meta: "Individual · Laravel",
     stack: ["Laravel", "Database", "CRUD"],
-    description: "A database-driven task management application that lets users create, organise, and track tasks through a structured Laravel backend.",
+    description: "A database driven task management application that lets users create, organise, and track tasks through a structured Laravel backend.",
     link: "https://github.com/RegaugetsweMphahlele/Laravel-Projects",
-    thumb: null,
+    thumb: TASK_THUMB,
     label: "Backend systems",
     proof: "Individual / CRUD workflow",
   },
@@ -174,11 +183,11 @@ const projects = [
     title: "StayHub — Booking System",
     meta: "Group · React, MongoDB, Express",
     stack: ["React", "Express", "MongoDB"],
-    description: "An Airbnb-style booking platform where property owners list accommodations and guests search, view, and book stays with secure authentication and listing management.",
+    description: "An Airbnb style booking platform where property owners list accommodations and guests search, view, and book stays with secure authentication and listing management.",
     link: "https://github.com/RegaugetsweMphahlele/StayHub-Website",
-    thumb: null,
-    label: "Full-stack build",
-    proof: "Group build / auth + listings",
+    thumb: TRAVEL_THUMB,
+    label: "Full stack build",
+    proof: "Group project / auth and listings",
   },
 ];
 
@@ -242,11 +251,11 @@ function SectionHeading({ index, eyebrow, title, intro }: { index: string; eyebr
   );
 }
 
-function LogoSlot({ compact = false }: { compact?: boolean }) {
+function LogoSlot({ compact = false, footer = false }: { compact?: boolean; footer?: boolean }) {
   return (
-    <div className={`logo-slot ${compact ? "logo-slot--compact" : ""}`} aria-label="Logo upload slot">
+    <div className={`logo-slot ${compact ? "logo-slot--compact" : ""} ${footer ? "logo-slot--footer" : ""}`} aria-label="Regaugetswe logo">
       <img src={MONOGRAM_MARK} alt="Temporary monogram mark; replace with uploaded logo" />
-      <span>{compact ? "RM" : "Upload logo"}</span>
+      {!compact && !footer && <span>Logo slot</span>}
     </div>
   );
 }
@@ -373,14 +382,14 @@ export default function Home() {
               <div className="eyebrow eyebrow--light"><span>01</span><i /> Portfolio / South Africa</div>
               <p className="hero-pretitle">Software developer &amp; ICT graduate</p>
               <h1>Regaugetswe <em>Mphahlele</em></h1>
-              <p className="hero-lede">I build useful systems with a human point of view — from full-stack products to applied AI experiences.</p>
-              <div className="type-line"><span className="type-label">Currently shaping</span><strong>{taglineText}<b aria-hidden="true" /></strong></div>
+              <p className="hero-lede">I build useful systems with a human point of view, from full stack products to applied AI experiences.</p>
+              <div className="type-line"><span className="type-label">I’m a</span><strong>{taglineText}<b aria-hidden="true" /></strong></div>
               <div className="hero-actions">
                 <button className="button button--gold" type="button" onClick={() => scrollTo("projects")}>View my work <ArrowUpRight size={16} /></button>
-                <a className="button button--ghost" href="/cv/Regaugetswe-Mphahlele-CV.pdf" download>Download CV <FileText size={16} /></a>
+                <a className="button button--ghost" href={CV_PLACEHOLDER} download>Download CV <FileText size={16} /></a>
               </div>
               <div className="hero-note"><span className="note-dot" /> Available for thoughtful collaborations</div>
-              <div className="asset-note">CV PDF slot ready · add the supplied file at <code>/cv/Regaugetswe-Mphahlele-CV.pdf</code></div>
+              <div className="asset-note">Temporary CV PDF in place · replace it with your final file when ready.</div>
             </div>
             <div className="hero-portrait reveal reveal-delay-2">
               <div className="portrait-frame">
@@ -492,7 +501,7 @@ export default function Home() {
                   <div className="project-card-inner">
                     <div className="project-face project-front">
                       <div className={`project-thumb ${project.thumb ? "project-thumb--image" : ""}`} style={project.thumb ? { backgroundImage: `url(${project.thumb})` } : undefined}><span className="project-thumb-label">{project.label}</span><span className="project-thumb-icon"><Code2 size={20} /></span></div>
-                      <div className="project-info"><div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.meta.split("·")[0].trim()}</span></div><h3>{project.title}</h3><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-proof"><FileText size={12} />{project.proof}</div><div className="project-reveal-hint">Hover or tap to open <Plus size={14} /></div></div>
+                      <div className="project-info"><div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.meta.split("·")[0].trim()}</span></div><h3>{project.title}</h3><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-proof"><FileText size={12} />{project.proof}</div><div className="project-reveal-hint">Hover or tap to view <Plus size={14} /></div></div>
                     </div>
                     <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3><p>{project.description}</p><a href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>Open project <ExternalLink size={13} /></a></div>
                   </div>
@@ -517,7 +526,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <div className="container footer-top"><LogoSlot /><div className="footer-copy"><p>Building useful systems with a human point of view.</p><small>© {new Date().getFullYear()} Regaugetswe Mphahlele. All rights reserved.</small></div><div className="footer-links"><a href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }}>Back to top <ChevronDown size={14} className="rotate-180" /></a><a href="https://github.com/RegaugetsweMphahlele" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a></div></div>
+        <div className="container footer-top"><LogoSlot footer /><div className="footer-copy"><p>Building useful systems with a human point of view.</p><small>© {new Date().getFullYear()} Regaugetswe Mphahlele. All rights reserved.</small></div><div className="footer-links"><a href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }}>Back to top <ChevronDown size={14} className="rotate-180" /></a><a href="https://github.com/RegaugetsweMphahlele" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a></div></div>
         <div className="container footer-bottom"><span>Portfolio / Software Development</span><span>Designed in the Editorial Atelier spirit</span><span>South Africa</span></div>
         <div className="container footer-assets" id="asset-slots"><span>Asset slots: logo · headshot · CV PDF · project screenshots</span><span>Replace supplied files without changing layout</span></div>
       </footer>

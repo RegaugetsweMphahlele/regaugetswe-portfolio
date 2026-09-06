@@ -1,8 +1,10 @@
-# Remaining Brief Checklist
+# Refinement Checklist
 
-- [ ] Add explicit, visible replacement instructions for the real logo, CV PDF, headshot, and project screenshots.
-- [ ] Add a lightweight fallback state for the CV download slot when no PDF is present.
-- [ ] Harden contact-form delivery feedback and provide a direct email fallback without replacing the form flow.
-- [ ] Add a visible accessibility skip link and verify focus states across navigation, theme toggle, project cards, and contact form controls.
-- [ ] Validate dark-mode parity, mobile navigation, project-card tap behavior, and production build output.
-- [ ] Save and deliver an updated checkpoint after validation.
+- [ ] Change the hero label from “Currently shaping” to “I’m a”.
+- [ ] Create and wire a valid temporary CV PDF placeholder that the user can replace later.
+- [ ] Replace the most artificial project thumbnails with clearer project specific editorial imagery and remove star like decorative treatment.
+- [ ] Ensure every project card keeps its image, title, tags, proof cue, and reveal control visible without clipping at desktop or mobile widths.
+- [ ] Reduce unnecessary hyphens and AI sounding punctuation in visible copy.
+- [ ] Remove footer upload wording and the gold line container while preserving the approved logo mark.
+- [ ] Adjust the contact form to send the written form data directly without an activation link or activation step.
+- [ ] Validate the updated build, light and dark states, responsive card visibility, and form feedback.
