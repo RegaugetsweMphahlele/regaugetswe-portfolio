@@ -1,8 +1,7 @@
-# Latest Refinement Checklist
+# Correction Checklist
 
-- [ ] Increase dark mode contrast for green and sage text across sections, cards, labels, and controls.
-- [ ] Replace repeated project images with distinct high quality visuals aligned to each project category.
-- [ ] Replace StayHub imagery with a hotel and accommodation booking image.
-- [ ] Add scroll driven progress animation to the experience timeline connector as the visitor moves between cards.
-- [ ] Validate dark mode, project imagery, timeline motion, responsive visibility, and production build output.
-- [ ] Save and deliver the updated checkpoint.
+- [ ] Make the timeline progress line pass through the marker centers and visibly reach marker 2 before continuing downward.
+- [ ] Replace the remaining dark mode green text with a warmer high contrast tone that fits the emerald and gold palette.
+- [ ] Make project images fill their frames without white side gaps while keeping the subject readable.
+- [ ] Validate the timeline, dark mode, project cards, responsive layout, and production build.
+- [ ] Save and deliver the corrected checkpoint.
