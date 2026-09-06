@@ -412,7 +412,7 @@ export default function Home() {
               <div className="type-line"><span className="type-label">I’m a</span><strong>{taglineText}<b aria-hidden="true" /></strong></div>
               <div className="hero-actions">
                 <button className="button button--gold" type="button" onClick={() => scrollTo("projects")}>View my work <ArrowUpRight size={16} /></button>
-                <a className="button button--ghost" href={CV_PLACEHOLDER} download aria-label="Download CV PDF">Download CV <FileText size={16} /></a>
+                <a className="button button--ghost" href={CV_PLACEHOLDER} target="_blank" rel="noreferrer" aria-label="View CV PDF">View CV <FileText size={16} /></a>
               </div>
               <div className="hero-note"><span className="note-dot" /> Available for thoughtful collaborations</div>
               <div className="asset-note">Temporary CV PDF in place · replace it with your final file when ready.</div>
