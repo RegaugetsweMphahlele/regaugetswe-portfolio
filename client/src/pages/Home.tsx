@@ -339,6 +339,7 @@ export default function Home() {
 
   return (
     <div className="site-shell">
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="site-header">
         <div className="header-inner">
           <a className="brand" href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }} aria-label="Regaugetswe Mphahlele home">
@@ -364,7 +365,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main>
+      <main id="main-content">
         <section className="hero" id="home" style={{ backgroundImage: `url(${HERO_TEXTURE})` }}>
           <div className="hero-overlay" />
           <div className="hero-inner">
@@ -379,6 +380,7 @@ export default function Home() {
                 <a className="button button--ghost" href="/cv/Regaugetswe-Mphahlele-CV.pdf" download>Download CV <FileText size={16} /></a>
               </div>
               <div className="hero-note"><span className="note-dot" /> Available for thoughtful collaborations</div>
+              <div className="asset-note">CV PDF slot ready · add the supplied file at <code>/cv/Regaugetswe-Mphahlele-CV.pdf</code></div>
             </div>
             <div className="hero-portrait reveal reveal-delay-2">
               <div className="portrait-frame">
@@ -482,6 +484,7 @@ export default function Home() {
         <section className="section section--projects" id="projects">
           <div className="container">
             <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Ten projects across product, civic-tech, AI, and the everyday web — each one a chance to turn a brief into something useful." /><span className="project-count">10<br /><small>projects</small></span></div>
+            <p className="section-asset-note">Project screenshot slots are ready for real media. Each card keeps its layout when a final capture is added.</p>
             <div className="project-grid">
               {projects.map((project, index) => {
                 const open = openProject === project.title;
@@ -516,6 +519,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container footer-top"><LogoSlot /><div className="footer-copy"><p>Building useful systems with a human point of view.</p><small>© {new Date().getFullYear()} Regaugetswe Mphahlele. All rights reserved.</small></div><div className="footer-links"><a href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }}>Back to top <ChevronDown size={14} className="rotate-180" /></a><a href="https://github.com/RegaugetsweMphahlele" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a></div></div>
         <div className="container footer-bottom"><span>Portfolio / Software Development</span><span>Designed in the Editorial Atelier spirit</span><span>South Africa</span></div>
+        <div className="container footer-assets" id="asset-slots"><span>Asset slots: logo · headshot · CV PDF · project screenshots</span><span>Replace supplied files without changing layout</span></div>
       </footer>
     </div>
   );
