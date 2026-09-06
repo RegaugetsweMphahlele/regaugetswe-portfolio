@@ -46,11 +46,13 @@ const CIVICTECH_THUMB = "/manus-storage/civic-tech-city_2ec72bd7.jpg";
 const COMMUNITY_THUMB = "/manus-storage/menacare-community_af19e254.jpg";
 const FITNESS_THUMB = "/manus-storage/fitness-studio_fba8d0bd.jpeg";
 const BEAUTY_THUMB = "/manus-storage/beauty-studio_c4b97fa0.jpg";
-const CINEMA_THUMB = "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1200&q=82";
+const CINEMA_THUMB = "/manus-storage/cinema-theater_ad3b4220.jpg";
 const MARKETING_THUMB = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=82";
+const PRODUCTIVITY_THUMB = "/manus-storage/productivity-dashboard_43a38f03.webp";
 const CODE_THUMB = "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=82";
+const CALCULATOR_THUMB = "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=1200&q=82";
 const TASK_THUMB = "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82";
-const TRAVEL_THUMB = "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=82";
+const HOTEL_THUMB = "/manus-storage/hotel-room_0b747c2a.jpg";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
 
@@ -145,7 +147,7 @@ const projects = [
     stack: ["AI", "Dashboard", "Productivity"],
     description: "A responsive workplace productivity dashboard combining an email generator, meeting notes summariser, task planner, research assistant, and AI chatbot.",
     link: "https://github.com/RegaugetsweMphahlele/AI-Productivity-Assistant",
-    thumb: CODE_THUMB,
+    thumb: PRODUCTIVITY_THUMB,
     label: "Applied AI",
     proof: "Individual / five AI tools",
   },
@@ -155,7 +157,7 @@ const projects = [
     stack: ["Python", "CLI", "Validation"],
     description: "A command-line calculator supporting a full range of arithmetic operations with comprehensive error handling and input validation.",
     link: "https://github.com/RegaugetsweMphahlele/Smart-Calculator",
-    thumb: CODE_THUMB,
+    thumb: CALCULATOR_THUMB,
     label: "Foundations",
     proof: "Individual / validation",
   },
@@ -185,8 +187,8 @@ const projects = [
     stack: ["React", "Express", "MongoDB"],
     description: "An Airbnb style booking platform where property owners list accommodations and guests search, view, and book stays with secure authentication and listing management.",
     link: "https://github.com/RegaugetsweMphahlele/StayHub-Website",
-    thumb: TRAVEL_THUMB,
-    label: "Full stack build",
+    thumb: HOTEL_THUMB,
+    label: "Hotel booking",
     proof: "Group project / auth and listings",
   },
 ];
@@ -318,6 +320,30 @@ export default function Home() {
     );
     document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const timeline = document.querySelector(".timeline") as HTMLElement | null;
+    if (!timeline) return;
+    let frame = 0;
+    const updateProgress = () => {
+      const rect = timeline.getBoundingClientRect();
+      const viewportPoint = window.innerHeight * 0.58;
+      const progress = Math.max(0, Math.min(1, (viewportPoint - rect.top) / rect.height));
+      timeline.style.setProperty("--timeline-progress", String(progress));
+    };
+    const onScroll = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(updateProgress);
+    };
+    updateProgress();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   const scrollTo = (id: string) => {

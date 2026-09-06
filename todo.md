@@ -1,10 +1,8 @@
-# Refinement Checklist
+# Latest Refinement Checklist
 
-- [ ] Change the hero label from “Currently shaping” to “I’m a”.
-- [ ] Create and wire a valid temporary CV PDF placeholder that the user can replace later.
-- [ ] Replace the most artificial project thumbnails with clearer project specific editorial imagery and remove star like decorative treatment.
-- [ ] Ensure every project card keeps its image, title, tags, proof cue, and reveal control visible without clipping at desktop or mobile widths.
-- [ ] Reduce unnecessary hyphens and AI sounding punctuation in visible copy.
-- [ ] Remove footer upload wording and the gold line container while preserving the approved logo mark.
-- [ ] Adjust the contact form to send the written form data directly without an activation link or activation step.
-- [ ] Validate the updated build, light and dark states, responsive card visibility, and form feedback.
+- [ ] Increase dark mode contrast for green and sage text across sections, cards, labels, and controls.
+- [ ] Replace repeated project images with distinct high quality visuals aligned to each project category.
+- [ ] Replace StayHub imagery with a hotel and accommodation booking image.
+- [ ] Add scroll driven progress animation to the experience timeline connector as the visitor moves between cards.
+- [ ] Validate dark mode, project imagery, timeline motion, responsive visibility, and production build output.
+- [ ] Save and deliver the updated checkpoint.
