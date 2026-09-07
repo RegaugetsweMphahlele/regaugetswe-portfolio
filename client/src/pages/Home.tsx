@@ -59,6 +59,7 @@ const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1545235617-9465d2a5
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
 const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
+const DEANS_CERTIFICATE_PDF = "/manus-storage/Certificate-of-Achievement_c11d4ba4.pdf";
 
 const navItems = [
   ["Home", "home"],
@@ -458,7 +459,7 @@ export default function Home() {
               <div className="eyebrow eyebrow--light"><span>01</span><i /> Portfolio / South Africa</div>
               <p className="hero-pretitle">Aspiring software engineer &amp; creative technologist</p>
               <h1>Regaugetswe <em>Mphahlele</em></h1>
-              <p className="hero-lede">I am an aspiring Software Engineer and Creative Technologist studying ICT in Multimedia Applications. I build responsive web applications, create digital brand identities, and design user focused experiences that make practical ideas easier to use. I bring development and design together, collaborate thoughtfully, and turn clear briefs into useful digital solutions.</p>
+              <p className="hero-lede">I am an aspiring Software Engineer and Creative Technologist with an ICT qualification in Multimedia Applications. I build responsive web applications, create digital brand identities, and design user focused experiences that make practical ideas easier to use. I bring development and design together, collaborate thoughtfully, and turn clear briefs into useful digital solutions.</p>
               <div className="type-line"><span className="type-label">I’m a</span><strong>{taglineText}<b aria-hidden="true" /></strong></div>
               <div className="hero-actions">
                 <button className="button button--gold" type="button" onClick={() => scrollTo("projects")}>View my work <ArrowUpRight size={16} /></button>
@@ -481,10 +482,10 @@ export default function Home() {
 
         <section className="section section--about" id="about">
           <div className="container about-layout">
-            <SectionHeading index="02" eyebrow="A little context" title="Thoughtful technology, grounded in people." intro="An aspiring Software Engineer and Creative Technologist studying ICT in Multimedia Applications, with practical experience across responsive web development, digital brand identity, and user focused design." />
+            <SectionHeading index="02" eyebrow="A little context" title="Thoughtful technology, grounded in people." intro="An aspiring Software Engineer and Creative Technologist with an ICT qualification in Multimedia Applications and practical experience across responsive web development, digital brand identity, and user focused design." />
             <div className="about-body reveal reveal-delay-1">
               <p className="lead-paragraph">I enjoy working where technology, communication, and visual thinking meet.</p>
-              <p>My experience includes developing and maintaining business websites, contributing to full stack applications, shaping digital brand identities, and collaborating on projects that respond to real needs. I am continuing to grow through structured programmes and certifications in artificial intelligence and Python, bringing curiosity, care, and a practical mindset to each brief.</p>
+              <p>My experience includes developing and maintaining business websites, contributing to full stack applications, shaping digital brand identities, and collaborating on projects that respond to real needs. I bring curiosity, care, and a practical mindset to each brief, supported by industry recognised certifications in artificial intelligence and Python.</p>
               <div className="about-signature"><span>—</span><span>Regaugetswe Mphahlele</span><small>Developer / learner / problem solver</small></div>
             </div>
           </div>
@@ -538,7 +539,7 @@ export default function Home() {
             <div className="education-list reveal reveal-delay-1">
               <div className="education-item"><div className="education-icon"><GraduationCap size={20} /></div><div><span className="education-year">Completed 2025</span><h3>Cape Peninsula University of Technology</h3><p>Diploma in Information Communication Technology, Multimedia Applications</p></div></div>
               <div className="education-item"><div className="education-icon"><FileCode2 size={20} /></div><div><span className="education-year">2021</span><h3>Kgagatlou Secondary School</h3><p>Senior Certificate</p></div></div>
-              <div className="award-card"><Trophy size={20} /><div><span>Dean’s Special Award · 2025</span><p>Faculty of Informatics and Design, CPUT — Creative Art and Design on the Pick n Pay project, FID Brand Promotion.</p></div></div>
+              <div className="award-card"><Trophy size={20} /><div><span>Dean’s Special Award · 2025</span><p>Faculty of Informatics and Design, CPUT — Creative Art and Design on the Pick n Pay project, FID Brand Promotion.</p><a className="award-link" href={DEANS_CERTIFICATE_PDF} target="_blank" rel="noreferrer">View Certificate <ExternalLink size={13} /></a></div></div>
             </div>
           </div>
         </section>
@@ -579,7 +580,7 @@ export default function Home() {
                       <div className={`project-thumb ${project.thumb ? "project-thumb--image" : ""}`} style={project.thumb ? { backgroundImage: `url(${project.thumb})` } : undefined}><span className="project-thumb-label">{project.label}</span><span className="project-thumb-icon"><Code2 size={20} /></span><span className="project-view-button">View Project <ArrowUpRight size={13} /></span></div>
                       <div className="project-info"><div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.meta.split("·")[0].trim()}</span></div><h3>{project.title}</h3><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-proof"><FileText size={12} />{project.proof}</div><div className="project-reveal-hint">Hover or tap to view <Plus size={14} /></div></div>
                     </div>
-                    <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3>{project.pdf && <div className="project-pdf-viewer"><div className="project-pdf-label"><FileText size={12} /> {project.pdfTitle}</div><iframe src={`${project.pdf}#toolbar=0&navpanes=0`} title={`${project.pdfTitle} PDF viewer`} /></div>}<p>{project.description}</p><a className="project-repo-button" href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>{project.link.includes("github.com") ? <><Github size={13} /> GitHub repository</> : <>View Project <ExternalLink size={13} /></>}</a></div>
+                    <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3>{project.pdf && <a className="project-pdf-button" href={project.pdf} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>View {project.pdfTitle} <ExternalLink size={13} /></a>}<p>{project.description}</p><a className="project-repo-button" href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>{project.link.includes("github.com") ? <><Github size={13} /> GitHub repository</> : <>View Project <ExternalLink size={13} /></>}</a></div>
                   </div>
                 </article>;
               })}
