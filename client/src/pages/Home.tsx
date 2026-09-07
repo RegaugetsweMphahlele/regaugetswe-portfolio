@@ -53,8 +53,12 @@ const CODE_THUMB = "https://images.unsplash.com/photo-1515879218367-8466d910aaa4
 const CALCULATOR_THUMB = "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=1200&q=82";
 const TASK_THUMB = "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82";
 const HOTEL_THUMB = "/manus-storage/hotel-room_0b747c2a.jpg";
+const BRAND_STRATEGY_THUMB = "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85";
+const ZEROWASTE_THUMB = "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=85";
+const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
+const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
 
 const navItems = [
   ["Home", "home"],
@@ -67,9 +71,10 @@ const navItems = [
 ] as const;
 
 const skills = {
-  "Languages & Frameworks": ["HTML", "CSS", "JavaScript", "PHP", "Python", "React", "Angular", "Laravel", "Express.js"],
-  "Databases & CMS": ["MongoDB", "MySQL", "WordPress", "Joomla"],
+  "Programming Languages": ["HTML", "CSS", "JavaScript", "PHP", "Java", "SQL", "Laravel", "MySQL", "React", "Bootstrap"],
+  "Databases & CMS": ["MongoDB", "WordPress", "Joomla", "Express.js"],
   Tools: ["Figma", "Visual Studio Code", "Docker", "GitLab", "MS Office"],
+  "Adobe Creative Suite": ["Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"],
   "Soft Skills": ["Attention to Detail", "Problem Solving", "Analytical Thinking", "Planning & Organising", "Communication", "Teamwork", "Adaptability"],
 };
 
@@ -90,7 +95,32 @@ const experience = [
   },
 ];
 
-const projects = [
+type Project = {
+  title: string;
+  meta: string;
+  stack: string[];
+  description: string;
+  link: string;
+  thumb: string;
+  label: string;
+  proof: string;
+  pdf?: string;
+  pdfTitle?: string;
+};
+
+const projects: Project[] = [
+  {
+    title: "Brand Strategy",
+    meta: "Individual · Adobe InDesign",
+    stack: ["Brand strategy", "Adobe InDesign", "Editorial design"],
+    description: "A branding strategy document created in Adobe InDesign, presenting the thinking, direction, and visual decisions behind a considered brand identity.",
+    link: "https://github.com/RegaugetsweMphahlele/Brand-Strategy",
+    thumb: BRAND_STRATEGY_THUMB,
+    label: "Brand strategy",
+    proof: "Individual / Adobe InDesign",
+    pdf: BRAND_STRATEGY_PDF,
+    pdfTitle: "Brand Strategy",
+  },
   {
     title: "MenaCare",
     meta: "Group · Girlcode Hackathon 2026",
@@ -140,6 +170,26 @@ const projects = [
     thumb: BEAUTY_THUMB,
     label: "Brand led web",
     proof: "Individual / mobile-first",
+  },
+  {
+    title: "ZeroWaste Connect",
+    meta: "Group · HTML, CSS and JavaScript",
+    stack: ["HTML", "CSS", "JavaScript"],
+    description: "A community platform that connects food donors with people in need, helping reduce food waste through donations, resources, and impact tracking.",
+    link: "https://github.com/RegaugetsweMphahlele/ZeroWaste-Connect-Website",
+    thumb: ZEROWASTE_THUMB,
+    label: "Community platform",
+    proof: "Group project / food access",
+  },
+  {
+    title: "Brand Guide",
+    meta: "Individual · Personal brand system",
+    stack: ["Brand identity", "Typography", "Visual systems"],
+    description: "A visual and strategic foundation for my personal brand, covering the logo, typography, colour palette, design principles, and additional design work.",
+    link: "https://github.com/RegaugetsweMphahlele/Brand-Guide",
+    thumb: BRAND_GUIDE_THUMB,
+    label: "Personal brand",
+    proof: "Individual / visual system",
   },
   {
     title: "AI Productivity Assistant",
@@ -274,7 +324,7 @@ export default function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [openProject, setOpenProject] = useState<string | null>(null);
-  const taglines = useMemo(() => ["Software Developer", "Full-Stack Web Developer", "AI Enthusiast", "Problem Solver"], []);
+  const taglines = useMemo(() => ["Software Engineer", "Full-Stack Web Developer", "Creative Technologist", "UX/UI Designer", "AI Enthusiast", "Problem Solver"], []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -379,7 +429,7 @@ export default function Home() {
         <div className="header-inner">
           <a className="brand" href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }} aria-label="Regaugetswe Mphahlele home">
             <LogoSlot compact />
-            <span className="brand-copy"><strong>Regaugetswe</strong><small>Software developer</small></span>
+            <span className="brand-copy"><strong>Regaugetswe</strong></span>
           </a>
           <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Primary navigation">
             {navItems.map(([label, id]) => (
@@ -406,9 +456,9 @@ export default function Home() {
           <div className="hero-inner">
             <div className="hero-copy reveal">
               <div className="eyebrow eyebrow--light"><span>01</span><i /> Portfolio / South Africa</div>
-              <p className="hero-pretitle">Software developer &amp; ICT graduate</p>
+              <p className="hero-pretitle">Aspiring software engineer &amp; creative technologist</p>
               <h1>Regaugetswe <em>Mphahlele</em></h1>
-              <p className="hero-lede">I build useful systems with a human point of view, from full stack products to applied AI experiences.</p>
+              <p className="hero-lede">I am an aspiring Software Engineer and Creative Technologist studying ICT in Multimedia Applications. I build responsive web applications, create digital brand identities, and design user focused experiences that make practical ideas easier to use. I bring development and design together, collaborate thoughtfully, and turn clear briefs into useful digital solutions.</p>
               <div className="type-line"><span className="type-label">I’m a</span><strong>{taglineText}<b aria-hidden="true" /></strong></div>
               <div className="hero-actions">
                 <button className="button button--gold" type="button" onClick={() => scrollTo("projects")}>View my work <ArrowUpRight size={16} /></button>
@@ -431,10 +481,10 @@ export default function Home() {
 
         <section className="section section--about" id="about">
           <div className="container about-layout">
-            <SectionHeading index="02" eyebrow="A little context" title="Thoughtful technology, grounded in people." intro="Recent ICT graduate with hands-on internship experience developing and maintaining business websites and full-stack applications." />
+            <SectionHeading index="02" eyebrow="A little context" title="Thoughtful technology, grounded in people." intro="An aspiring Software Engineer and Creative Technologist studying ICT in Multimedia Applications, with practical experience across responsive web development, digital brand identity, and user focused design." />
             <div className="about-body reveal reveal-delay-1">
-              <p className="lead-paragraph">Confident troubleshooting technical issues, coordinating updates against client requirements, and delivering reliable, high-quality work in a structured team setting.</p>
-              <p>Currently building on this foundation through the FNB Pre-Academy programme and industry-recognised certifications in artificial intelligence and Python — bringing strong technical ability, fast learning, and genuine enthusiasm to every project.</p>
+              <p className="lead-paragraph">I enjoy working where technology, communication, and visual thinking meet.</p>
+              <p>My experience includes developing and maintaining business websites, contributing to full stack applications, shaping digital brand identities, and collaborating on projects that respond to real needs. I am continuing to grow through structured programmes and certifications in artificial intelligence and Python, bringing curiosity, care, and a practical mindset to each brief.</p>
               <div className="about-signature"><span>—</span><span>Regaugetswe Mphahlele</span><small>Developer / learner / problem solver</small></div>
             </div>
           </div>
@@ -450,7 +500,7 @@ export default function Home() {
 
         <section className="section section--sage" id="skills">
           <div className="container">
-            <SectionHeading index="03" eyebrow="Working toolkit" title="A practical stack with room to grow." intro="The tools I reach for — and the habits that help me use them well." />
+            <SectionHeading index="03" eyebrow="Working toolkit" title="A practical stack with room to grow." intro="The technologies, creative tools, and working habits I use to turn ideas into clear, useful digital experiences." />
             <div className="skills-layout">
               <div className="skill-intro reveal"><div className="skill-quote">“<span>Good work is part craft, part curiosity, and a lot of careful listening.</span>”</div><div className="skill-caption">How I like to work</div></div>
               <div className="skills-groups">
@@ -518,8 +568,8 @@ export default function Home() {
 
         <section className="section section--projects" id="projects">
           <div className="container">
-            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Ten projects across product, civic-tech, AI, and the everyday web — each one a chance to turn a brief into something useful." /><span className="project-count">10<br /><small>projects</small></span></div>
-            <p className="section-asset-note">Project screenshot slots are ready for real media. Each card keeps its layout when a final capture is added.</p>
+            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Thirteen projects across product, civic technology, AI, brand identity, and the everyday web — each one a chance to turn a brief into something useful." /><div className="project-count">13<br /><small>projects</small></div></div>
+            <p className="section-asset-note">Each project card pairs a clear visual, technology context, and a direct route to the project or repository.</p>
             <div className="project-grid">
               {projects.map((project, index) => {
                 const open = openProject === project.title;
@@ -529,7 +579,7 @@ export default function Home() {
                       <div className={`project-thumb ${project.thumb ? "project-thumb--image" : ""}`} style={project.thumb ? { backgroundImage: `url(${project.thumb})` } : undefined}><span className="project-thumb-label">{project.label}</span><span className="project-thumb-icon"><Code2 size={20} /></span><span className="project-view-button">View Project <ArrowUpRight size={13} /></span></div>
                       <div className="project-info"><div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.meta.split("·")[0].trim()}</span></div><h3>{project.title}</h3><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-proof"><FileText size={12} />{project.proof}</div><div className="project-reveal-hint">Hover or tap to view <Plus size={14} /></div></div>
                     </div>
-                    <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3><p>{project.description}</p><a href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>View Project <ExternalLink size={13} /></a></div>
+                    <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3>{project.pdf && <div className="project-pdf-viewer"><div className="project-pdf-label"><FileText size={12} /> {project.pdfTitle}</div><iframe src={`${project.pdf}#toolbar=0&navpanes=0`} title={`${project.pdfTitle} PDF viewer`} /></div>}<p>{project.description}</p><a className="project-repo-button" href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>{project.link.includes("github.com") ? <><Github size={13} /> GitHub repository</> : <>View Project <ExternalLink size={13} /></>}</a></div>
                   </div>
                 </article>;
               })}
