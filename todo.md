@@ -1,9 +1,6 @@
-# Certifications Update
+# New Certificate Integration
 
-- [ ] Upload the attached AI For Everyone Coursera certificate.
-- [ ] Replace the current certification data with the eight specified recruiter focused certificate records.
-- [ ] Add a clear View Certificate action for every card, using an embedded file when available and a prepared placeholder state for future uploads.
-- [ ] Add the recruiter focused certifications summary.
-- [ ] Preserve glossy card styling, equal heights, and dark and light mode contrast.
-- [ ] Validate certificate access, responsive layout, and production build output.
+- [ ] Upload the Generative AI with Large Language Models certificate.
+- [ ] Create its first page thumbnail and connect both assets to the matching certification card.
+- [ ] Verify the View Certificate action, responsive card styling, and production build.
 - [ ] Save and deliver the updated checkpoint.

@@ -62,6 +62,8 @@ const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
 const DEANS_CERTIFICATE_PDF = "/manus-storage/Certificate-of-Achievement_c11d4ba4.pdf";
 const AI_FOR_EVERYONE_PDF = "/manus-storage/AI-For-Everyone_bf7b41dc.pdf";
 const AI_FOR_EVERYONE_THUMB = "/manus-storage/AI-For-Everyone-thumb_704376e5.png";
+const GENERATIVE_AI_LLMS_PDF = "/manus-storage/Generative-AI-LLMs_1507c04e.pdf";
+const GENERATIVE_AI_LLMS_THUMB = "/manus-storage/Generative-AI-LLMs-thumb_8cd07d73.png";
 
 const navItems = [
   ["Home", "home"],
@@ -264,7 +266,7 @@ const certifications: Certification[] = [
   { title: "Supervised Machine Learning: Regression and Classification", issuer: "DeepLearning.AI & Stanford University", meta: "Coursera certification", state: "Certificate slot ready", icon: BrainCircuit },
   { title: "Introduction to Generative AI", issuer: "Google Cloud", meta: "Coursera certification", state: "Certificate slot ready", icon: Sparkles },
   { title: "Generative AI: Prompt Engineering Basics", issuer: "IBM", meta: "Coursera certification", state: "Certificate slot ready", icon: Code2 },
-  { title: "Generative AI with Large Language Models", issuer: "DeepLearning.AI & Amazon Web Services", meta: "Coursera certification", state: "Certificate slot ready", icon: Layers3 },
+  { title: "Generative AI with Large Language Models", issuer: "DeepLearning.AI & Amazon Web Services", meta: "Coursera certification", pdf: GENERATIVE_AI_LLMS_PDF, thumb: GENERATIVE_AI_LLMS_THUMB, state: "Certificate available", icon: Layers3 },
   { title: "Unsupervised Learning, Recommenders, Reinforcement Learning", issuer: "DeepLearning.AI & Stanford Online", meta: "Andrew Ng · Completed 24 August 2026", state: "Certificate slot ready", icon: Trophy },
 ];
 
