@@ -1,6 +1,7 @@
-# Timeline Route Correction
+# Experience Timeline Update
 
-- [ ] Replace the straight connector crossing behavior with a route that avoids each numbered circle.
-- [ ] Keep the animated progress state aligned to the corrected route.
-- [ ] Confirm the route remains clean on desktop, mobile, light mode, and dark mode.
-- [ ] Run the production build and save the corrected checkpoint.
+- [ ] Add a CAPACITI Cape Town experience entry to Path so far.
+- [ ] Add a Plum Systems experience entry to Path so far.
+- [ ] Keep timeline numbering and circle avoiding connector behavior clean.
+- [ ] Validate responsive timeline layout and production build.
+- [ ] Save and deliver the updated experience checkpoint.
