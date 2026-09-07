@@ -60,6 +60,8 @@ const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
 const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
 const DEANS_CERTIFICATE_PDF = "/manus-storage/Certificate-of-Achievement_c11d4ba4.pdf";
+const AI_FOR_EVERYONE_PDF = "/manus-storage/AI-For-Everyone_bf7b41dc.pdf";
+const AI_FOR_EVERYONE_THUMB = "/manus-storage/AI-For-Everyone-thumb_704376e5.png";
 
 const navItems = [
   ["Home", "home"],
@@ -244,47 +246,26 @@ const projects: Project[] = [
   },
 ];
 
-const certifications = [
-  {
-    title: "Artificial Intelligence in the 4IR",
-    issuer: "University of Johannesburg",
-    meta: "260AI4IR_P",
-    link: "https://lms.uj.ac.za/course/view.php?id=33279",
-    state: "Certificate link",
-    icon: BrainCircuit,
-  },
-  {
-    title: "FNB Pre-Academy Programme",
-    issuer: "FNB",
-    meta: "Currently enrolled",
-    link: null,
-    state: "In progress",
-    icon: Code2,
-  },
-  {
-    title: "AI Skills Acceleration Programme",
-    issuer: "CAPACITI CPT",
-    meta: "Google AI Essentials Specialization",
-    link: null,
-    state: "Completed",
-    icon: Sparkles,
-  },
-  {
-    title: "AI For Everyone",
-    issuer: "DeepLearning.AI · She Plus Tech x Coursera",
-    meta: "Software Professionals pathway",
-    link: null,
-    state: "In progress · est. Jul 2026",
-    icon: HeartHandshake,
-  },
-  {
-    title: "Python Programming Fundamentals",
-    issuer: "Microsoft Python Development Specialization",
-    meta: "She Plus Tech x Coursera Scholarship",
-    link: null,
-    state: "In progress · est. Aug 2026",
-    icon: Terminal,
-  },
+type Certification = {
+  title: string;
+  issuer: string;
+  meta: string;
+  link?: string;
+  pdf?: string;
+  thumb?: string;
+  state: string;
+  icon: typeof BrainCircuit;
+};
+
+const certifications: Certification[] = [
+  { title: "Introduction to Artificial Intelligence (AI)", issuer: "IBM", meta: "Coursera certification", state: "Certificate slot ready", icon: BrainCircuit },
+  { title: "AI For Everyone", issuer: "DeepLearning.AI", meta: "Coursera certification", pdf: AI_FOR_EVERYONE_PDF, thumb: AI_FOR_EVERYONE_THUMB, state: "Certificate available", icon: HeartHandshake },
+  { title: "Python for Data Science, AI & Development", issuer: "IBM", meta: "Coursera certification", state: "Certificate slot ready", icon: Terminal },
+  { title: "Supervised Machine Learning: Regression and Classification", issuer: "DeepLearning.AI & Stanford University", meta: "Coursera certification", state: "Certificate slot ready", icon: BrainCircuit },
+  { title: "Introduction to Generative AI", issuer: "Google Cloud", meta: "Coursera certification", state: "Certificate slot ready", icon: Sparkles },
+  { title: "Generative AI: Prompt Engineering Basics", issuer: "IBM", meta: "Coursera certification", state: "Certificate slot ready", icon: Code2 },
+  { title: "Generative AI with Large Language Models", issuer: "DeepLearning.AI & Amazon Web Services", meta: "Coursera certification", state: "Certificate slot ready", icon: Layers3 },
+  { title: "Unsupervised Learning, Recommenders, Reinforcement Learning", issuer: "DeepLearning.AI & Stanford Online", meta: "Andrew Ng · Completed 24 August 2026", state: "Certificate slot ready", icon: Trophy },
 ];
 
 const stats = [
@@ -546,13 +527,14 @@ export default function Home() {
 
         <section className="section section--dark" id="certifications">
           <div className="container">
-            <SectionHeading index="06" eyebrow="Signals of practice" title="Always learning. Always applying." intro="Selected programmes and certifications that keep the toolkit current and the thinking generous." />
+            <SectionHeading index="06" eyebrow="Signals of practice" title="Eight certifications. One practical direction." intro="I have completed eight specialised Coursera certifications authorised by globally recognised institutions including DeepLearning.AI, Stanford University, IBM, Google Cloud, and Amazon Web Services. Together they span artificial intelligence, machine learning, Python, recommender systems, reinforcement learning, prompt engineering, and large language models, building a strong foundation for AI driven software development and data focused projects." />
             <div className="cert-grid">
-              {certifications.map(({ title, issuer, meta, link, state, icon: Icon }, index) => (
-                <article className={`cert-card reveal reveal-delay-${Math.min(index + 1, 3)}`} key={title}>
+              {certifications.map(({ title, issuer, meta, link, pdf, thumb, state, icon: Icon }, index) => (
+                <article className={`cert-card reveal reveal-delay-${Math.min((index % 3) + 1, 3)}`} key={title}>
                   <div className="cert-card-top"><span className="cert-number">0{index + 1}</span><Icon size={22} strokeWidth={1.4} /></div>
+                  <div className={`cert-thumb ${thumb ? "cert-thumb--image" : ""}`} style={thumb ? { backgroundImage: `url(${thumb})` } : undefined}>{!thumb && <span>Certificate thumbnail<br />will be added here</span>}</div>
                   <h3>{title}</h3><p className="cert-issuer">{issuer}</p><p className="cert-meta">{meta}</p>
-                  {link ? <a className="cert-link" href={link} target="_blank" rel="noreferrer">View certificate <ExternalLink size={13} /></a> : <span className="cert-state">{state}</span>}
+                  {pdf ? <a className="cert-link" href={pdf} target="_blank" rel="noreferrer">View Certificate <ExternalLink size={13} /></a> : link ? <a className="cert-link" href={link} target="_blank" rel="noreferrer">View Certificate <ExternalLink size={13} /></a> : <span className="cert-state">{state}</span>}
                 </article>
               ))}
             </div>

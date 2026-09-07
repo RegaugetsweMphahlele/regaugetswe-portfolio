@@ -221,18 +221,21 @@ button { border: 0; }
 .award-card span { font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .award-card p { margin: 6px 0 0; color: var(--ink-soft); font-size: 12px; line-height: 1.65; }
 
-.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 26px; margin-top: 75px; border-top: 1px solid var(--line-dark); }
-.cert-card { position: relative; min-height: 265px; padding: 23px 4px 23px 0; border-bottom: 1px solid var(--line-dark); background: transparent; transition: transform 220ms var(--ease-out), color 180ms ease; }
-.cert-card:nth-child(3n + 2) { padding-left: 18px; border-left: 1px solid var(--line-dark); }
-.cert-card:nth-child(3n) { padding-left: 18px; border-left: 1px solid var(--line-dark); }
+.cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 22px; margin-top: 75px; border-top: 1px solid var(--line-dark); }
+.cert-card { position: relative; min-height: 390px; padding: 23px 4px 23px 0; border-bottom: 1px solid var(--line-dark); background: transparent; display: flex; flex-direction: column; transition: transform 220ms var(--ease-out), color 180ms ease; }
+.cert-card:nth-child(4n + 2), .cert-card:nth-child(4n + 3), .cert-card:nth-child(4n) { padding-left: 18px; border-left: 1px solid var(--line-dark); }
+.cert-thumb { display: flex; align-items: center; justify-content: center; min-height: 122px; margin-bottom: 22px; padding: 13px; border: 1px solid rgba(200,169,106,.32); background: linear-gradient(135deg, rgba(200,169,106,.14), rgba(15,61,52,.65)); color: var(--gold); font-size: 8px; font-weight: 800; letter-spacing: .13em; line-height: 1.5; text-align: center; text-transform: uppercase; }
+.cert-thumb--image { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.cert-thumb--image::after { content: ""; }
+.cert-card h3 { min-height: 76px; }
 .cert-card:hover { transform: translateY(-4px); }
 .cert-card:hover .cert-number, .cert-card:hover .cert-card-top svg { color: #e0be85; }
 .cert-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; color: var(--gold); }
 .cert-number { font-family: "Cormorant Garamond", Georgia, serif; font-size: 16px; }
-.cert-card h3 { max-width: 230px; margin: 0 0 12px; color: var(--paper); font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; font-weight: 500; letter-spacing: -.02em; line-height: .98; }
+.cert-card h3 { max-width: 230px; margin: 0 0 12px; color: var(--paper); font-family: "Cormorant Garamond", Georgia, serif; font-size: 25px; font-weight: 500; letter-spacing: -.02em; line-height: 1; overflow-wrap: anywhere; hyphens: none; }
 .cert-issuer { margin: 0 0 5px; color: var(--sage); font-size: 11px; line-height: 1.55; }
 .cert-meta { margin: 0; color: rgba(185,207,198,.6); font-size: 10px; line-height: 1.55; }
-.cert-link, .cert-state { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.cert-link, .cert-state { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 20px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .cert-link:hover { color: #e0be85; }
 .cert-state { color: var(--sage); }
 
@@ -394,8 +397,9 @@ button { border: 0; }
   .timeline-card-top { align-items: flex-start; flex-direction: column; gap: 8px; }
   .education-list { padding-top: 0; }
   .cert-grid { grid-template-columns: 1fr 1fr; margin-top: 48px; }
-  .cert-card { min-height: 245px; padding: 19px; }
-  .cert-card h3 { font-size: 25px; }
+  .cert-card, .cert-card:nth-child(4n + 2), .cert-card:nth-child(4n + 3), .cert-card:nth-child(4n) { min-height: 390px; padding: 19px; border-left: 0; }
+  .cert-card:nth-child(even) { border-left: 1px solid var(--line-dark); }
+  .cert-card h3 { min-height: 84px; font-size: 25px; }
   .feature-card { grid-template-columns: 48px minmax(0, 1fr); gap: 20px; padding: 28px 22px; }
   .feature-card .button { grid-column: 2; justify-self: start; }
   .projects-heading { align-items: start; }
@@ -418,6 +422,7 @@ button { border: 0; }
   .type-line { align-items: flex-start; flex-direction: column; gap: 4px; }
   .type-line strong { min-width: 0; }
   .cert-grid { grid-template-columns: 1fr; }
+  .cert-card, .cert-card:nth-child(even) { min-height: 0; border-left: 0; }
   .feature-card { grid-template-columns: 1fr; }
   .feature-card .button { grid-column: auto; }
   .timeline-item { grid-template-columns: 30px minmax(0, 1fr); gap: 15px; }
