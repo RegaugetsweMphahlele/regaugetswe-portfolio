@@ -195,11 +195,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .timeline { position: relative; max-width: 900px; margin: 76px auto 0; }
 .timeline::before { content: ""; position: absolute; top: 19px; bottom: 19px; left: 19px; width: 1px; background: rgba(200,169,106,.3); }
-.timeline::after { content: ""; position: absolute; top: 19px; left: 19px; width: 2px; height: calc((100% - 38px) * var(--timeline-progress, 0)); background: linear-gradient(180deg, #e0be85, var(--gold)); transform-origin: top; box-shadow: 0 0 13px rgba(200,169,106,.42); transition: height 120ms linear; pointer-events: none; }
+.timeline::after { content: ""; position: absolute; z-index: 0; top: 19px; left: 19px; width: 2px; height: calc((100% - 38px) * var(--timeline-progress, 0)); background: linear-gradient(180deg, #e0be85, var(--gold)); transform-origin: top; box-shadow: 0 0 13px rgba(200,169,106,.42); transition: height 120ms linear; pointer-events: none; }
 .timeline-item { position: relative; display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 25px; }
 .timeline-item + .timeline-item { margin-top: 48px; }
-.timeline-marker { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--gold); border-radius: 50%; background: linear-gradient(90deg, transparent 0 47%, var(--gold) 47% 53%, transparent 53% 100%), var(--paper-deep); color: var(--gold-deep); }
-.timeline-marker span { position: relative; z-index: 1; padding: 0 2px; background: var(--paper-deep); font-family: "Cormorant Garamond", Georgia, serif; font-size: 16px; }
+.timeline-marker { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 1px solid var(--gold); border-radius: 50%; background: var(--paper-deep); color: var(--gold-deep); box-shadow: 0 0 0 5px var(--paper); }
+.timeline-marker span { position: relative; z-index: 3; padding: 0 3px; background: var(--paper-deep); font-family: "Cormorant Garamond", Georgia, serif; font-size: 16px; }
 .timeline-card { padding: 27px 29px 28px; border: 1px solid var(--line); background: color-mix(in srgb, var(--paper) 80%, transparent); box-shadow: var(--shadow); }
 .timeline-card-top { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 23px; }
 .status { color: var(--ink-soft); font-size: 9px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
