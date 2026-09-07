@@ -56,6 +56,7 @@ const HOTEL_THUMB = "/manus-storage/hotel-room_0b747c2a.jpg";
 const BRAND_STRATEGY_THUMB = "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85";
 const ZEROWASTE_THUMB = "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=85";
 const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85";
+const BUDGET_PLANNER_THUMB = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
 const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
@@ -197,7 +198,17 @@ const projects: Project[] = [
     proof: "Individual / visual system",
   },
   {
-    title: "AI Productivity Assistant",
+    title: "AI Budget Planner",
+    meta: "Group · AI finance platform",
+    stack: ["Claude", "Groq", "Vercel", "Supabase"],
+    description: "An AI powered budget planner that helps users manage income and expenses, detect overspending, receive personalised saving recommendations, set financial goals, track progress, analyse spending patterns, and export spending reports as PDFs in one intuitive platform.",
+    link: "https://ai-budget-planner-wine.vercel.app/",
+    thumb: BUDGET_PLANNER_THUMB,
+    label: "AI finance platform",
+    proof: "Group project / financial planning",
+  },
+  {
+    title: "AI Productivity Dashboard",
     meta: "Individual · CAPACITI accelerator",
     stack: ["AI", "Dashboard", "Productivity"],
     description: "A responsive workplace productivity dashboard combining an email generator, meeting notes summariser, task planner, research assistant, and AI chatbot.",
@@ -553,7 +564,7 @@ export default function Home() {
 
         <section className="section section--projects" id="projects">
           <div className="container">
-            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Thirteen projects across product, civic technology, AI, brand identity, and the everyday web — each one a chance to turn a brief into something useful." /><div className="project-count">13<br /><small>projects</small></div></div>
+            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Fourteen projects across product, civic technology, AI, brand identity, and the everyday web — each one a chance to turn a brief into something useful." /><div className="project-count">14<br /><small>projects</small></div></div>
             <p className="section-asset-note">Each project card pairs a clear visual, technology context, and a direct route to the project or repository.</p>
             <div className="project-grid">
               {projects.map((project, index) => {
