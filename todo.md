@@ -1,7 +1,6 @@
-# Timeline Cleanup
+# Timeline Route Correction
 
-- [ ] Keep the animated progress line behind the numbered marker circles.
-- [ ] Mask the marker numbers with a solid background so the line never crosses their text.
-- [ ] Preserve smooth scroll progress and responsive alignment.
-- [ ] Validate desktop and mobile timeline readability and production build output.
-- [ ] Save and deliver the corrected checkpoint.
+- [ ] Replace the straight connector crossing behavior with a route that avoids each numbered circle.
+- [ ] Keep the animated progress state aligned to the corrected route.
+- [ ] Confirm the route remains clean on desktop, mobile, light mode, and dark mode.
+- [ ] Run the production build and save the corrected checkpoint.
