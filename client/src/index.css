@@ -9,9 +9,9 @@
   --paper-deep: #efeee8;
   --mint: #e6f0e9;
   --ink: #0f3d34;
-  --ink-soft: #3e5c54;
+  --ink-soft: #294b42;
   --gold: #c8a96a;
-  --gold-deep: #a6883f;
+  --gold-deep: #8d6f2d;
   --sand: #e8d9c4;
   --sage: #b9cfc6;
   --dark: #081f1b;
@@ -59,6 +59,7 @@ button, input, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
 button { border: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 4px; }
 ::selection { background: var(--gold); color: #102c26; }
 
 .site-shell { overflow: hidden; }
@@ -184,6 +185,7 @@ button { border: 0; }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-pill { padding: 9px 12px; border: 1px solid rgba(15,61,52,.18); border-radius: 999px; color: var(--ink-soft); font-size: 11px; transition: transform 180ms var(--ease-out), background-color 180ms ease, border-color 180ms ease, color 180ms ease; }
 .dark .skill-pill { border-color: rgba(200,169,106,.32); color: #eadfc9; }
+.dark a:focus-visible, .dark button:focus-visible, .dark input:focus-visible, .dark textarea:focus-visible { outline-color: #e0be85; }
 .dark .section-heading p, .dark .about-body p, .dark .timeline-card > p:last-child, .dark .education-item p, .dark .feature-card p, .dark .section-asset-note, .dark .skill-caption, .dark .project-reveal-hint { color: #eadfc9; }
 .dark .stat-card strong, .dark .contact-details a, .dark .contact-form input, .dark .contact-form textarea { color: #f7f6f1; }
 .dark .contact-form input::placeholder, .dark .contact-form textarea::placeholder { color: rgba(234,223,201,.78); }
@@ -235,7 +237,7 @@ button { border: 0; }
 .cert-card h3 { max-width: 230px; margin: 0 0 12px; color: var(--paper); font-family: "Cormorant Garamond", Georgia, serif; font-size: 25px; font-weight: 500; letter-spacing: -.02em; line-height: 1; overflow-wrap: anywhere; hyphens: none; }
 .cert-issuer { margin: 0 0 5px; color: var(--sage); font-size: 11px; line-height: 1.55; }
 .cert-meta { margin: 0; color: rgba(185,207,198,.6); font-size: 10px; line-height: 1.55; }
-.cert-link, .cert-state { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 20px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.cert-link, .cert-state { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 20px; color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .cert-link:hover { color: #e0be85; }
 .cert-state { color: var(--sage); }
 
@@ -279,7 +281,7 @@ button { border: 0; }
 .project-topline { display: flex; justify-content: space-between; color: var(--gold-deep); font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .project-info h3, .project-back h3 { margin: 17px 0 0; color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; font-size: 31px; font-weight: 500; letter-spacing: -.03em; line-height: 1; overflow-wrap: anywhere; hyphens: none; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 24px; }
-.tag-row span { padding: 6px 8px; border: 1px solid var(--line); color: var(--ink-soft); font-size: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.tag-row span { padding: 6px 8px; border: 1px solid color-mix(in srgb, var(--ink-soft) 42%, transparent); color: var(--ink-soft); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .project-proof { display: flex; align-items: center; gap: 7px; margin-top: 16px; color: var(--gold-deep); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .project-reveal-hint { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 9px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .project-back-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
@@ -289,7 +291,7 @@ button { border: 0; }
 .project-pdf-viewer { margin-top: 14px; border: 1px solid rgba(200,169,106,.28); background: #f7f6f1; }
 .project-pdf-label { display: flex; align-items: center; gap: 6px; padding: 7px 9px; color: #0f3d34; font-size: 8px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
 .project-pdf-viewer iframe { display: block; width: 100%; height: 150px; border: 0; background: #f7f6f1; }
-.project-pdf-button, .project-repo-button, .award-link { display: inline-flex; align-items: center; gap: 7px; width: fit-content; color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.project-pdf-button, .project-repo-button, .award-link { display: inline-flex; align-items: center; gap: 7px; width: fit-content; color: var(--gold-deep); font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; border-bottom: 1px solid color-mix(in srgb, var(--gold-deep) 48%, transparent); }
 .project-pdf-button { margin-top: 19px; padding-bottom: 8px; border-bottom: 1px solid rgba(200,169,106,.45); }
 .award-link { margin-top: 13px; }
 .project-pdf-button:hover, .project-repo-button:hover, .award-link:hover { color: #e0be85; }

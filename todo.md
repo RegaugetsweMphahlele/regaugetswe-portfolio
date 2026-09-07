@@ -1,6 +1,8 @@
-# New Certificate Integration
+# Readability and Accessibility Update
 
-- [ ] Upload the Generative AI with Large Language Models certificate.
-- [ ] Create its first page thumbnail and connect both assets to the matching certification card.
-- [ ] Verify the View Certificate action, responsive card styling, and production build.
-- [ ] Save and deliver the updated checkpoint.
+- [ ] Strengthen dark ink text on white, cream, and mint backgrounds.
+- [ ] Improve muted text, metadata, project tags, certification text, and footer labels for readability.
+- [ ] Make links and buttons visibly identifiable without relying on hover alone.
+- [ ] Preserve visible focus indicators and improve small screen text sizing and line height.
+- [ ] Validate light mode, dark mode, mobile readability, and production build output.
+- [ ] Save and deliver the accessibility refinement checkpoint.
