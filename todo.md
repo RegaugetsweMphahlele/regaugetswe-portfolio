@@ -1,7 +1,4 @@
-# Experience Timeline Update
+# CAPACITI Label Correction
 
-- [ ] Add a CAPACITI Cape Town experience entry to Path so far.
-- [ ] Add a Plum Systems experience entry to Path so far.
-- [ ] Keep timeline numbering and circle avoiding connector behavior clean.
-- [ ] Validate responsive timeline layout and production build.
-- [ ] Save and deliver the updated experience checkpoint.
+- [ ] Ensure the experience company label reads exactly “CAPACITI · Cape Town”.
+- [ ] Validate the build and save the corrected checkpoint.

@@ -87,7 +87,7 @@ const experience = [
   {
     year: "Jul 2026 — Present",
     role: "Digital Associate — Software Development",
-    company: "CAPACITI · Cape Town",
+    company: "Capaciti · Cape Town",
     detail: "Developing skills and delivering software projects through CAPACITI’s Digital Associate programme, applying full stack development practices in a professional team environment.",
     current: true,
   },
