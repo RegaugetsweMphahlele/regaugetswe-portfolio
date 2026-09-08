@@ -1,7 +1,7 @@
-# Count Up Visibility Fix
+# CareerBuddy SA Project Update
 
-- [ ] Diagnose the current count-up trigger and initial render behavior.
-- [ ] Make the animation reliably visible when the landing page statistics appear.
-- [ ] Preserve final values, reduced motion behavior, and responsive layout.
-- [ ] Validate the visible animation path and production build.
-- [ ] Save and deliver the corrected checkpoint.
+- [ ] Add CareerBuddy SA with the supplied South African career guidance description.
+- [ ] Add the supplied live link and an aligned project image.
+- [ ] Update the project count while preserving card interaction behavior.
+- [ ] Validate desktop, mobile, link access, and production build.
+- [ ] Save and deliver the updated checkpoint.

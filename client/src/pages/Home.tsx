@@ -57,6 +57,7 @@ const BRAND_STRATEGY_THUMB = "https://images.unsplash.com/photo-1558655146-d0934
 const ZEROWASTE_THUMB = "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=85";
 const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85";
 const BUDGET_PLANNER_THUMB = "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85";
+const CAREERBUDDY_THUMB = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
 const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
@@ -206,6 +207,16 @@ const projects: Project[] = [
     thumb: BUDGET_PLANNER_THUMB,
     label: "AI finance platform",
     proof: "Group project / financial planning",
+  },
+  {
+    title: "CareerBuddy SA",
+    meta: "AI career guidance platform · South Africa",
+    stack: ["AI chat", "Education", "Bursary guidance"],
+    description: "An AI powered career guidance platform for South African Grade 9 to 12 pupils, helping them explore subjects, careers, study paths, and bursary opportunities through a conversational chat experience.",
+    link: "https://grade-genius-mentor.lovable.app/",
+    thumb: CAREERBUDDY_THUMB,
+    label: "Career guidance",
+    proof: "Education platform / South Africa",
   },
   {
     title: "AI Productivity Dashboard",
@@ -618,7 +629,7 @@ export default function Home() {
 
         <section className="section section--projects" id="projects">
           <div className="container">
-            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Fourteen projects across product, civic technology, AI, brand identity, and the everyday web — each one a chance to turn a brief into something useful." /><div className="project-count">14<br /><small>projects</small></div></div>
+            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Fifteen projects across product, civic technology, AI, brand identity, and the everyday web — each one a chance to turn a brief into something useful." /><div className="project-count">15<br /><small>projects</small></div></div>
             <p className="section-asset-note">Each project card pairs a clear visual, technology context, and a direct route to the project or repository.</p>
             <div className="project-grid">
               {projects.map((project, index) => {
