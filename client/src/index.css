@@ -170,7 +170,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .stat-card:not(:first-child) { padding-left: 20px; }
 .stat-card:last-child { border-right: 0; }
 .stat-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 33px; color: var(--gold-deep); }
-.stat-top span { font-family: "Cormorant Garamond", Georgia, serif; font-size: 17px; }
+.stat-top span, .stat-count { display: inline-block; min-width: 2ch; font-family: "Cormorant Garamond", Georgia, serif; font-size: 17px; font-variant-numeric: tabular-nums; letter-spacing: .03em; }
 .stat-card strong { max-width: 150px; display: block; color: var(--ink); font-size: 11px; font-weight: 800; letter-spacing: .05em; line-height: 1.5; text-transform: uppercase; }
 
 .skills-layout { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: 12%; margin-top: 75px; }

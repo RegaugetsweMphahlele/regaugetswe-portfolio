@@ -4,7 +4,7 @@
  * This page keeps logo, CV, headshot, and project screenshots as replaceable slots.
  */
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -288,6 +288,56 @@ const stats = [
   { value: "04", label: "Hackathon Participant", icon: Trophy },
 ];
 
+function CountUpNumber({ value, delay = 0 }: { value: string; delay?: number }) {
+  const target = Number.parseInt(value, 10);
+  const [displayValue, setDisplayValue] = useState(0);
+  const numberRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const node = numberRef.current;
+    if (!node) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let frame = 0;
+    let timer = 0;
+    let started = false;
+
+    const finish = () => setDisplayValue(target);
+    const start = () => {
+      if (started) return;
+      started = true;
+      if (reducedMotion) {
+        finish();
+        return;
+      }
+      const startedAt = performance.now();
+      const duration = 900;
+      const tick = (now: number) => {
+        const progress = Math.min(1, (now - startedAt) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setDisplayValue(Math.round(target * eased));
+        if (progress < 1) frame = window.requestAnimationFrame(tick);
+      };
+      timer = window.setTimeout(() => { frame = window.requestAnimationFrame(tick); }, delay);
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        start();
+        observer.disconnect();
+      }
+    }, { threshold: 0.45 });
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
+  }, [delay, target]);
+
+  return <span ref={numberRef} className="stat-count" aria-label={value}>{String(displayValue).padStart(2, "0")}</span>;
+}
+
 function SectionHeading({ index, eyebrow, title, intro }: { index: string; eyebrow: string; title: string; intro?: string }) {
   return (
     <div className="section-heading reveal">
@@ -486,7 +536,7 @@ export default function Home() {
           <div className="container stats-grid">
             {stats.map(({ value, label, icon: Icon }, index) => (
               <div className={`stat-card reveal reveal-delay-${Math.min(index + 1, 3)}`} key={label}>
-                <div className="stat-top"><span>{value}</span><Icon size={19} strokeWidth={1.5} /></div>
+                <div className="stat-top"><CountUpNumber value={value} delay={index * 120} /><Icon size={19} strokeWidth={1.5} /></div>
                 <strong>{label}</strong>
               </div>
             ))}

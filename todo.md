@@ -1,8 +1,7 @@
-# AI Budget Planner Project Update
+# Landing Page Count Up Animation
 
-- [ ] Add the AI Budget Planner project record with the supplied live URL.
-- [ ] Use the supplied budget planning description and mark it as a group project.
-- [ ] Add Claude, Groq, Vercel, and Supabase to the project technology tags.
-- [ ] Preserve equal card heights, existing interactions, and responsive visibility.
-- [ ] Validate the live link, production build, and project card layout.
+- [ ] Identify the landing page statistic values and their current markup.
+- [ ] Add an intersection triggered count up animation that runs once per page visit.
+- [ ] Respect prefers reduced motion and preserve readable final values for assistive technology.
+- [ ] Validate light mode, dark mode, mobile layout, timing, and production build output.
 - [ ] Save and deliver the updated checkpoint.
