@@ -251,6 +251,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .feature-card p strong { color: var(--ink); }
 
 .projects-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.latest-project-note { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; padding: 11px 14px; border: 1px solid var(--gold); background: color-mix(in srgb, var(--gold) 11%, transparent); color: var(--ink); text-decoration: none; transition: transform 180ms var(--ease-out), background 180ms var(--ease-out); }
+.latest-project-note span { color: var(--gold-deep); font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.latest-project-note strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 21px; font-weight: 600; }
+.latest-project-note svg { color: var(--gold-deep); }
+.latest-project-note:hover { background: color-mix(in srgb, var(--gold) 22%, transparent); transform: translateY(-2px); }
 .section-asset-note { margin: 22px 0 0; color: var(--ink-soft); font-size: 10px; font-weight: 700; letter-spacing: .04em; }
 .project-count { display: block; min-width: 100px; padding-bottom: 7px; border-bottom: 1px solid var(--gold); color: var(--gold-deep); font-family: "Cormorant Garamond", Georgia, serif; font-size: 48px; line-height: .78; text-align: right; }
 .project-count small { color: var(--ink-soft); font-family: "Manrope", Arial, sans-serif; font-size: 8px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }

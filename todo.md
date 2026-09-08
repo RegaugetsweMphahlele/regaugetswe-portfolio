@@ -1,7 +1,7 @@
-# CareerBuddy SA Project Update
+# CareerBuddy SA Visibility Repair
 
-- [ ] Add CareerBuddy SA with the supplied South African career guidance description.
-- [ ] Add the supplied live link and an aligned project image.
-- [ ] Update the project count while preserving card interaction behavior.
-- [ ] Validate desktop, mobile, link access, and production build.
-- [ ] Save and deliver the updated checkpoint.
+- [ ] Confirm the CareerBuddy SA entry is in the active source and published project version.
+- [ ] Inspect the project rendering and project count for a mismatch.
+- [ ] Repair the visible card rendering and refresh the published build.
+- [ ] Verify the card on desktop and mobile and confirm the live link.
+- [ ] Save and deliver the corrected checkpoint.

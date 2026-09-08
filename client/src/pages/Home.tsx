@@ -630,7 +630,7 @@ export default function Home() {
         <section className="section section--projects" id="projects">
           <div className="container">
             <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Fifteen projects across product, civic technology, AI, brand identity, and the everyday web — each one a chance to turn a brief into something useful." /><div className="project-count">15<br /><small>projects</small></div></div>
-            <p className="section-asset-note">Each project card pairs a clear visual, technology context, and a direct route to the project or repository.</p>
+            <p className="section-asset-note">Each project card pairs a clear visual, technology context, and a direct route to the project or repository.</p><a className="latest-project-note" href="https://grade-genius-mentor.lovable.app/" target="_blank" rel="noreferrer"><span>Latest addition</span><strong>CareerBuddy SA</strong><ArrowUpRight size={14} /></a>
             <div className="project-grid">
               {projects.map((project, index) => {
                 const open = openProject === project.title;
