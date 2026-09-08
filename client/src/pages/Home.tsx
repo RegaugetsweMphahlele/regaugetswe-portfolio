@@ -298,26 +298,28 @@ function CountUpNumber({ value, delay = 0 }: { value: string; delay?: number }) 
     if (!node) return;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let frame = 0;
-    let timer = 0;
+    let animationTimer = 0;
+    let fallbackTimer = 0;
     let started = false;
 
     const finish = () => setDisplayValue(target);
     const start = () => {
       if (started) return;
       started = true;
+      window.clearTimeout(fallbackTimer);
       if (reducedMotion) {
         finish();
         return;
       }
       const startedAt = performance.now();
-      const duration = 900;
+      const duration = 1100;
       const tick = (now: number) => {
         const progress = Math.min(1, (now - startedAt) / duration);
         const eased = 1 - Math.pow(1 - progress, 3);
         setDisplayValue(Math.round(target * eased));
         if (progress < 1) frame = window.requestAnimationFrame(tick);
       };
-      timer = window.setTimeout(() => { frame = window.requestAnimationFrame(tick); }, delay);
+      animationTimer = window.setTimeout(() => { frame = window.requestAnimationFrame(tick); }, delay);
     };
 
     const observer = new IntersectionObserver(([entry]) => {
@@ -325,13 +327,15 @@ function CountUpNumber({ value, delay = 0 }: { value: string; delay?: number }) 
         start();
         observer.disconnect();
       }
-    }, { threshold: 0.45 });
+    }, { threshold: 0.15 });
     observer.observe(node);
+    fallbackTimer = window.setTimeout(start, 420 + delay);
 
     return () => {
       observer.disconnect();
       window.cancelAnimationFrame(frame);
-      window.clearTimeout(timer);
+      window.clearTimeout(animationTimer);
+      window.clearTimeout(fallbackTimer);
     };
   }, [delay, target]);
 

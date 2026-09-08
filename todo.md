@@ -1,7 +1,7 @@
-# Landing Page Count Up Animation
+# Count Up Visibility Fix
 
-- [ ] Identify the landing page statistic values and their current markup.
-- [ ] Add an intersection triggered count up animation that runs once per page visit.
-- [ ] Respect prefers reduced motion and preserve readable final values for assistive technology.
-- [ ] Validate light mode, dark mode, mobile layout, timing, and production build output.
-- [ ] Save and deliver the updated checkpoint.
+- [ ] Diagnose the current count-up trigger and initial render behavior.
+- [ ] Make the animation reliably visible when the landing page statistics appear.
+- [ ] Preserve final values, reduced motion behavior, and responsive layout.
+- [ ] Validate the visible animation path and production build.
+- [ ] Save and deliver the corrected checkpoint.
