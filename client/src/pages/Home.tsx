@@ -41,23 +41,23 @@ import {
 
 const HERO_TEXTURE = "/manus-storage/regaugetswe-hero-texture_cfa8fe7a.png";
 const PROFILE_PLACEHOLDER = "/manus-storage/regaugetswe-profile-placeholder_e71ca5c7.png";
-const MENACARE_THUMB = "/manus-storage/menstrual-health-community_dcbb1b61.jpeg";
-const CIVICTECH_THUMB = "/manus-storage/civic-tech-city_2ec72bd7.jpg";
-const COMMUNITY_THUMB = "/manus-storage/menacare-community_af19e254.jpg";
-const FITNESS_THUMB = "/manus-storage/fitness-studio_fba8d0bd.jpeg";
+const MENACARE_THUMB = "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=88";
+const CIVICTECH_THUMB = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=88";
+const COMMUNITY_THUMB = "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=88";
+const FITNESS_THUMB = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=88";
 const BEAUTY_THUMB = "/manus-storage/beauty-salon_fc970af3.jpg";
 const CINEMA_THUMB = "/manus-storage/cinema-projector_f7d73d45.jpg";
-const MARKETING_THUMB = "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=82";
+const MARKETING_THUMB = "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=88";
 const PRODUCTIVITY_THUMB = "/manus-storage/ai-assistant_3a0556ae.png";
-const CODE_THUMB = "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=82";
-const CALCULATOR_THUMB = "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?auto=format&fit=crop&w=1200&q=88";
-const TASK_THUMB = "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=82";
+const CODE_THUMB = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=88";
+const CALCULATOR_THUMB = "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1200&q=88";
+const TASK_THUMB = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=88";
 const HOTEL_THUMB = "/manus-storage/hotel-booking_67378795.jpg";
-const BRAND_STRATEGY_THUMB = "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=85";
-const ZEROWASTE_THUMB = "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=85";
-const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1545235617-9465d2a55698?auto=format&fit=crop&w=1200&q=85";
+const BRAND_STRATEGY_THUMB = "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=88";
+const ZEROWASTE_THUMB = "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=88";
+const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=88";
 const BUDGET_PLANNER_THUMB = "/manus-storage/fintech-ui_e8a873f4.jpg";
-const CAREERBUDDY_THUMB = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85";
+const CAREERBUDDY_THUMB = "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=88";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
 const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
@@ -68,7 +68,6 @@ const GENERATIVE_AI_LLMS_PDF = "/manus-storage/Generative-AI-LLMs_1507c04e.pdf";
 const GENERATIVE_AI_LLMS_THUMB = "/manus-storage/Generative-AI-LLMs-thumb_8cd07d73.png";
 
 const navItems = [
-  ["Home", "home"],
   ["About", "about"],
   ["Skills", "skills"],
   ["Experience", "experience"],
@@ -489,7 +488,7 @@ export default function Home() {
         <div className="header-inner">
           <a className="brand" href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }} aria-label="Regaugetswe Mphahlele home">
             <LogoSlot compact />
-            <span className="brand-copy"><strong>Regaugetswe</strong></span>
+            <span className="brand-copy"><strong>Regaugetswe Mphahlele</strong></span>
           </a>
           <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Primary navigation">
             {navItems.map(([label, id]) => (
@@ -498,15 +497,16 @@ export default function Home() {
               </a>
             ))}
           </nav>
-          <div className="header-actions">
-            <button className="theme-toggle" type="button" aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-              {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
-              <span>{theme === "light" ? "Night" : "Day"}</span>
-            </button>
-            <button className="menu-toggle" type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
-          </div>
+            <div className="header-actions">
+              <button className="theme-toggle" type="button" aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+                {theme === "light" ? <Moon size={17} /> : <Sun size={17} />}
+                <span>{theme === "light" ? "Night" : "Day"}</span>
+              </button>
+              <a className="resume-action" href={CV_PLACEHOLDER} target="_blank" rel="noreferrer" aria-label="View resume PDF">View CV <FileText size={15} /></a>
+              <button className="menu-toggle" type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
+                {menuOpen ? <X size={20} /> : <Menu size={20} />}
+              </button>
+            </div>
         </div>
       </header>
 
