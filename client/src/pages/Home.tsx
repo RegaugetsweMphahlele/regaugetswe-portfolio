@@ -7,6 +7,8 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDown,
+  ArrowLeft,
+  ArrowRight,
   ArrowUpRight,
   BadgeCheck,
   BrainCircuit,
@@ -68,6 +70,7 @@ const GENERATIVE_AI_LLMS_PDF = "/manus-storage/Generative-AI-LLMs_1507c04e.pdf";
 const GENERATIVE_AI_LLMS_THUMB = "/manus-storage/Generative-AI-LLMs-thumb_8cd07d73.png";
 
 const navItems = [
+  ["Home", "home"],
   ["About", "about"],
   ["Skills", "skills"],
   ["Experience", "experience"],
@@ -362,6 +365,19 @@ function SectionHeading({ index, eyebrow, title, intro }: { index: string; eyebr
   );
 }
 
+const sectionSequence = ["home", "about", "skills", "experience", "education", "certifications", "projects", "contact"] as const;
+
+function SectionNavigator({ current, onNavigate }: { current: (typeof sectionSequence)[number]; onNavigate: (id: string) => void }) {
+  const index = sectionSequence.indexOf(current);
+  const previous = sectionSequence[(index - 1 + sectionSequence.length) % sectionSequence.length];
+  const next = sectionSequence[(index + 1) % sectionSequence.length];
+  return <nav className="section-navigator" aria-label={`${current} section navigation`}>
+    <button type="button" onClick={() => onNavigate(previous)}><ArrowLeft size={13} /> Previous</button>
+    <button type="button" onClick={() => onNavigate("home")}><ArrowUpRight size={13} /> Back to top</button>
+    <button type="button" onClick={() => onNavigate(next)}>Next <ArrowRight size={13} /></button>
+  </nav>;
+}
+
 function LogoSlot({ compact = false, footer = false }: { compact?: boolean; footer?: boolean }) {
   return (
     <div className={`logo-slot ${compact ? "logo-slot--compact" : ""} ${footer ? "logo-slot--footer" : ""}`} aria-label="Regaugetswe logo">
@@ -556,6 +572,7 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="container"><SectionNavigator current="about" onNavigate={scrollTo} /></div>
         </section>
 
         <section className="section section--sage" id="skills">
@@ -573,6 +590,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className="container"><SectionNavigator current="skills" onNavigate={scrollTo} /></div>
         </section>
 
         <section className="section section--experience" id="experience">
@@ -590,6 +608,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <div className="container"><SectionNavigator current="experience" onNavigate={scrollTo} /></div>
         </section>
 
         <section className="section section--cream" id="education">
@@ -601,11 +620,12 @@ export default function Home() {
               <div className="award-card"><Trophy size={20} /><div><span>Dean’s Special Award · 2025</span><p>Faculty of Informatics and Design, CPUT — Creative Art and Design on the Pick n Pay project, FID Brand Promotion.</p><a className="award-link" href={DEANS_CERTIFICATE_PDF} target="_blank" rel="noreferrer">View Certificate <ExternalLink size={13} /></a></div></div>
             </div>
           </div>
+          <div className="container"><SectionNavigator current="education" onNavigate={scrollTo} /></div>
         </section>
 
         <section className="section section--dark" id="certifications">
           <div className="container">
-            <SectionHeading index="06" eyebrow="Signals of practice" title="Eight certifications. One practical direction." intro="I have completed eight specialised Coursera certifications authorised by globally recognised institutions including DeepLearning.AI, Stanford University, IBM, Google Cloud, and Amazon Web Services. Together they span artificial intelligence, machine learning, Python, recommender systems, reinforcement learning, prompt engineering, and large language models, building a strong foundation for AI driven software development and data focused projects." />
+            <SectionHeading index="06" eyebrow="Signals of practice" title="Eight certifications. One practical direction." />
             <div className="cert-grid">
               {certifications.map(({ title, issuer, meta, link, pdf, thumb, state, icon: Icon }, index) => (
                 <article className={`cert-card reveal reveal-delay-${Math.min((index % 3) + 1, 3)}`} key={title}>
@@ -617,6 +637,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <div className="container"><SectionNavigator current="certifications" onNavigate={scrollTo} /></div>
         </section>
 
         <section className="section section--feature" id="hackathon">
@@ -629,23 +650,22 @@ export default function Home() {
 
         <section className="section section--projects" id="projects">
           <div className="container">
-            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." intro="Fifteen projects across product, civic technology, AI, brand identity, and the everyday web — each one a chance to turn a brief into something useful." /><div className="project-count">15<br /><small>projects</small></div></div>
-            <p className="section-asset-note">Each project card pairs a clear visual, technology context, and a direct route to the project or repository.</p><a className="latest-project-note" href="https://grade-genius-mentor.lovable.app/" target="_blank" rel="noreferrer"><span>Latest addition</span><strong>CareerBuddy SA</strong><ArrowUpRight size={14} /></a>
+            <div className="projects-heading"><SectionHeading index="08" eyebrow="Selected work" title="A portfolio in progress, built in public." /><div className="project-count">15<br /><small>projects</small></div></div>
+            <a className="latest-project-note" href="https://ai-budget-planner-wine.vercel.app/" target="_blank" rel="noreferrer"><span>Featured project</span><strong>AI Budget Planner</strong><ArrowUpRight size={14} /></a>
             <div className="project-grid">
               {projects.map((project, index) => {
-                const open = openProject === project.title;
-                return <article className={`project-card reveal reveal-delay-${Math.min((index % 3) + 1, 3)} ${open ? "is-open" : ""}`} key={project.title} onClick={() => setOpenProject(open ? null : project.title)} onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") setOpenProject(open ? null : project.title); }} role="button" tabIndex={0} aria-expanded={open}>
+                return <article className={`project-card reveal reveal-delay-${Math.min((index % 3) + 1, 3)}`} key={project.title}>
                   <div className="project-card-inner">
                     <div className="project-face project-front">
-                      <div className={`project-thumb ${project.thumb ? "project-thumb--image" : ""}`} style={project.thumb ? { backgroundImage: `url(${project.thumb})` } : undefined}><span className="project-thumb-label">{project.label}</span><span className="project-thumb-icon"><Code2 size={20} /></span><span className="project-view-button">View Project <ArrowUpRight size={13} /></span></div>
-                      <div className="project-info"><div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.meta.split("·")[0].trim()}</span></div><h3>{project.title}</h3><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-proof"><FileText size={12} />{project.proof}</div><div className="project-reveal-hint">Hover or tap to view <Plus size={14} /></div></div>
+                      <div className={`project-thumb ${project.thumb ? "project-thumb--image" : ""}`} style={project.thumb ? { backgroundImage: `url(${project.thumb})` } : undefined}><span className="project-thumb-label">{project.label}</span><span className="project-thumb-icon"><Code2 size={20} /></span><a className="project-view-button" href={project.link} target="_blank" rel="noreferrer">View Project <ArrowUpRight size={13} /></a></div>
+                      <div className="project-info"><div className="project-topline"><span>{String(index + 1).padStart(2, "0")}</span><span>{project.meta.split("·")[0].trim()}</span></div><h3>{project.title}</h3><p className="project-description">{project.description}</p><div className="tag-row">{project.stack.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-proof"><FileText size={12} />{project.proof}</div>{project.pdf && <a className="project-pdf-button" href={project.pdf} target="_blank" rel="noreferrer">View {project.pdfTitle} <ExternalLink size={13} /></a>}<a className="project-repo-button" href={project.link} target="_blank" rel="noreferrer">{project.link.includes("github.com") ? <><Github size={13} /> GitHub repository</> : <>View Project <ExternalLink size={13} /> </>}</a></div>
                     </div>
-                    <div className="project-face project-back"><div className="project-back-top"><span>{project.meta}</span><button type="button" aria-label={`Open ${project.title} project link`} onClick={(event) => { event.stopPropagation(); window.open(project.link, "_blank", "noopener,noreferrer"); }}><ArrowUpRight size={17} /></button></div><h3>{project.title}</h3>{project.pdf && <a className="project-pdf-button" href={project.pdf} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>View {project.pdfTitle} <ExternalLink size={13} /></a>}<p>{project.description}</p><a className="project-repo-button" href={project.link} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>{project.link.includes("github.com") ? <><Github size={13} /> GitHub repository</> : <>View Project <ExternalLink size={13} /></>}</a></div>
                   </div>
                 </article>;
               })}
             </div>
           </div>
+          <div className="container"><SectionNavigator current="projects" onNavigate={scrollTo} /></div>
         </section>
 
         <section className="section section--contact" id="contact">
@@ -659,6 +679,7 @@ export default function Home() {
               <small className="form-note">Messages are routed to my inbox through a secure form service. No account or download required.</small>
             </form>
           </div>
+          <div className="container"><SectionNavigator current="contact" onNavigate={scrollTo} /></div>
         </section>
       </main>
 

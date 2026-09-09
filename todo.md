@@ -28,3 +28,18 @@ The attached header is the layout reference only. The portfolio remains emerald 
 
 Desktop validation shows the header now uses a compact circular mark on the left, a full-name lockup, centered rounded navigation, circular theme control, and rounded View CV action. Mobile validation shows the brand remains readable, the theme control and menu button remain visible, and the navigation collapses without affecting the hero layout. The existing emerald, gold, cream, and dark palette remains unchanged.
 
+
+
+## Attached prompt continuation
+
+- [ ] Read `/home/ubuntu/upload/pasted_content_2.txt` and extract its concrete portfolio requirements.
+- [ ] Translate the prompt into implementation tasks while preserving the existing emerald and gold identity.
+- [ ] Implement the requested changes and validate desktop, mobile, interactions, and production build.
+- [ ] Save and deliver the resulting live checkpoint.
+
+
+
+## Attached prompt validation notes
+
+The desktop preview confirms Budget AI is presented as the featured project, the Projects and Certifications heading paragraphs have been removed, and the project grid is aligned in three columns with static rounded cards. The mobile preview confirms cards stack into one column, the header remains responsive, and the new section navigation controls fit the narrow layout. TypeScript and production build checks pass.
+
