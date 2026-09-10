@@ -405,7 +405,7 @@ function SectionNavigator({ current, onNavigate }: { current: (typeof sectionSeq
 function LogoSlot({ compact = false, footer = false }: { compact?: boolean; footer?: boolean }) {
   return (
     <div className={`logo-slot ${compact ? "logo-slot--compact" : ""} ${footer ? "logo-slot--footer" : ""}`} aria-label="Regaugetswe logo">
-      <img src={MONOGRAM_MARK} alt="Temporary monogram mark; replace with uploaded logo" />
+      <img src={MONOGRAM_MARK} alt="Temporary monogram mark; replace with uploaded logo" loading="lazy" decoding="async" />
       {!compact && !footer && <span>Logo slot</span>}
     </div>
   );
@@ -605,7 +605,7 @@ export default function Home() {
               <div className="asset-note">View the current 2026 CV above for a complete profile of experience and capabilities.</div>
             </div>
             <div className="hero-portrait hero-portrait--clean reveal reveal-delay-2">
-              <img className="hero-portrait-image" src={PROFILE_PLACEHOLDER} alt="Professional headshot of Regaugetswe Mphahlele" />
+              <img className="hero-portrait-image" src={PROFILE_PLACEHOLDER} alt="Professional headshot of Regaugetswe Mphahlele" fetchPriority="high" decoding="async" />
             </div>
           </div>
           <button className="scroll-cue" type="button" onClick={() => scrollTo("about")} aria-label="Scroll to about section"><span>Scroll to explore</span><ArrowDown size={15} /></button>
@@ -699,7 +699,7 @@ export default function Home() {
         <section className="section section--feature" id="hackathon">
           <div className="container feature-card reveal">
             <div className="feature-mark"><Trophy size={26} /></div>
-            <div><div className="section-kicker"><span>07</span><i /> Highlight</div><h2>Girlcode Hackathon <em>2026</em> Participant</h2><p>As part of a team at the Girlcode Hackathon, co-developed <strong>MenaCare</strong> — a youth-friendly menstrual health experience designed to make education, support, and care feel more approachable.</p><img className="feature-proof-image" src={GIRLCODE_PROOF} alt="GirlCode Hackathon supporting proof" /></div>
+            <div><div className="section-kicker"><span>07</span><i /> Highlight</div><h2>Girlcode Hackathon <em>2026</em> Participant</h2><p>As part of a team at the Girlcode Hackathon, co-developed <strong>MenaCare</strong> — a youth-friendly menstrual health experience designed to make education, support, and care feel more approachable.</p><img className="feature-proof-image" src={GIRLCODE_PROOF} alt="GirlCode Hackathon supporting proof" loading="lazy" decoding="async" /></div>
             <button className="button button--outline" type="button" onClick={() => scrollTo("projects")}>See MenaCare <ArrowUpRight size={16} /></button>
           </div>
         </section>

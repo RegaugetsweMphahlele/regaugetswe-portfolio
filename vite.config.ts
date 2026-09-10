@@ -219,6 +219,14 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "lucide-react", "wouter"],
+        },
+      },
+    },
   },
   server: {
     port: 3000,
