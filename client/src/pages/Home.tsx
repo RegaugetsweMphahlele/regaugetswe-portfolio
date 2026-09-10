@@ -700,7 +700,7 @@ export default function Home() {
           <div className="container feature-card reveal">
             <div className="feature-mark"><Trophy size={26} /></div>
             <div><div className="section-kicker"><span>07</span><i /> Highlight</div><h2>Girlcode Hackathon <em>2026</em> Participant</h2><p>As part of a team at the Girlcode Hackathon, co-developed <strong>MenaCare</strong> — a youth-friendly menstrual health experience designed to make education, support, and care feel more approachable.</p><img className="feature-proof-image" src={GIRLCODE_PROOF} alt="GirlCode Hackathon supporting proof" loading="lazy" decoding="async" /></div>
-            <button className="button button--outline" type="button" onClick={() => scrollTo("projects")}>See MenaCare <ArrowUpRight size={16} /></button>
+            <a className="button button--outline" href="https://menacare-hrzae37u.manus.space/" target="_blank" rel="noreferrer">See MenaCare <ArrowUpRight size={16} /></a>
           </div>
         </section>
 

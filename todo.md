@@ -240,3 +240,16 @@ Dark mode now keeps the footer statement “Building useful systems with a human
 
 Performance-only changes include hero asset preloads, asynchronous image decoding, lazy loading for below-the-fold image elements, and cache-friendly vendor chunking. The production JavaScript was split from a single 517 KB bundle into a 473 KB application chunk plus a 45 KB reusable vendor chunk. A visually unsafe offscreen containment experiment was removed after validation showed it could hide below-the-fold cards in full-page captures. TypeScript and production builds pass, and desktop/mobile full-page previews preserve all sections, cards, layout, and content.
 
+
+
+## GirlCode MenaCare link
+
+- [ ] Change the GirlCode Hackathon “See MenaCare” button to open the MenaCare project URL directly.
+- [ ] Validate the direct link and production build.
+
+
+
+## GirlCode MenaCare link validation
+
+The See MenaCare action now opens https://menacare-hrzae37u.manus.space/ directly in a new tab instead of scrolling to Projects. The destination returned HTTP 200, and TypeScript, production build, and desktop full-page preview checks passed.
+
