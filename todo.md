@@ -111,21 +111,3 @@ The portrait is now larger and positioned higher on desktop so it aligns more cl
 
 The header now follows the page sequence Home, About, Skills, Experience, Education, Certifications, Highlight, Projects, Contact. The logo is retained without the name, a functional search control is included, and the header controls remain contained at desktop and mobile widths. Hero and supporting paragraph text have stronger contrast and weight. The animated hero title is limited to Full-Stack Software Developer, requested supporting intro paragraphs were removed, the portrait is enlarged and raised, and the green image block is softened away. Project thumbnails use a consistent 220px image window and cover crop. TypeScript and production build checks pass, with desktop and mobile previews validated.
 
-
-
-## Cards.zip and dark-mode refinement
-
-- [ ] Inventory Cards.zip and map every correctly named image to its project card.
-- [ ] Upload and integrate the matched card images using consistent dimensions and cropping.
-- [ ] Change the header View CV action to download the supplied CV.
-- [ ] Make dark-mode green text white or otherwise clearly readable.
-- [ ] Restore visible hover and active states for Projects and Certifications in the header.
-- [ ] Strengthen Skills section text and pill contrast in both themes.
-- [ ] Validate card mappings, CV download, navigation states, and responsive layouts.
-
-
-
-## Cards.zip refinement validation
-
-All 14 images supplied in Cards.zip were extracted, optimized, uploaded, and mapped to matching project cards, including MenaCare, Western Cape Public Hospital, Vixen Cinema, Ad Luxe Studio, Blossom Nail Studio, ZeroWaste Connect, Brand Strategy, AI Budget Planner, CareerBuddy SA, AI Productivity Dashboard, Smart Calculator, EliteGym, Laravel Task Management, and StayHub. Brand Guide retained its existing relevant visual because Cards.zip did not contain a Brand Guide file. The header CV action now downloads the supplied CV. Dark-mode navigation, project/certification hover states, skills pills, and supporting copy were strengthened for visibility. TypeScript, production build, full desktop preview, and full mobile preview passed.
-
