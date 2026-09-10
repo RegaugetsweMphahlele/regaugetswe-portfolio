@@ -450,3 +450,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Uploaded proof asset: contained evidence image with the same quiet border language as the feature card. */
 .feature-proof-image { display: block; width: min(100%, 520px); max-height: 180px; margin-top: 18px; border: 1px solid var(--line); object-fit: cover; object-position: center; box-shadow: 0 12px 26px color-mix(in srgb, var(--ink) 10%, transparent); }
+
+
+/* Clean hero portrait treatment: image only, no frame or embedded typography; the mask softens the subject boundary into the emerald hero field. */
+.hero-portrait--clean { display: flex; align-items: flex-end; justify-content: center; width: min(100%, 390px); min-height: 470px; }
+.hero-portrait--clean .hero-portrait-image { display: block; width: min(100%, 370px); height: auto; max-height: 570px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 24px 34px rgba(0, 10, 8, .22)); }
+@media (max-width: 1020px) { .hero-portrait--clean { max-width: 330px; min-height: 400px; } .hero-portrait--clean .hero-portrait-image { width: min(100%, 315px); } }
+@media (max-width: 760px) { .hero-portrait--clean { width: min(76vw, 310px); min-height: 360px; margin: 52px auto 0; } .hero-portrait--clean .hero-portrait-image { width: 100%; } }

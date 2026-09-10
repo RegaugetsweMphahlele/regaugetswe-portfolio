@@ -65,3 +65,17 @@ The supplied transparent headshot is visible in the hero, the current CV is conn
 
 All 35 uploaded storage paths returned HTTP 200, including the transparent hero headshot, CV, GirlCode proof image, fourteen certificate PDFs, and their thumbnails. The desktop and mobile previews show the integrated files within the existing layout, and TypeScript plus production build checks pass. The project is ready for the final checkpoint after the remaining source changes are saved.
 
+
+
+## Hero portrait refinement
+
+- [ ] Remove all text and words embedded in the supplied headshot treatment.
+- [ ] Remove the portrait frame and blend the headshot into the emerald hero background without visible pasted edges.
+- [ ] Validate the clean hero on desktop and mobile, then save the updated checkpoint.
+
+
+
+## Hero portrait refinement validation
+
+The hero portrait is now image-only with no portrait frame, no image captions, no embedded clothing words, and an emerald-integrated background that matches the hero treatment. Desktop and mobile previews remain responsive, and TypeScript plus production build checks pass.
+

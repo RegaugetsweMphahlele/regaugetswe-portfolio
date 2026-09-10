@@ -42,7 +42,7 @@ import {
 } from "lucide-react";
 
 const HERO_TEXTURE = "/manus-storage/regaugetswe-hero-texture_cfa8fe7a.png";
-const PROFILE_PLACEHOLDER = "/manus-storage/hero-headshot-transparent_271a6954.png";
+const PROFILE_PLACEHOLDER = "/manus-storage/hero-headshot-emerald_327d9eb9.png";
 const MENACARE_THUMB = "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=88";
 const CIVICTECH_THUMB = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=88";
 const COMMUNITY_THUMB = "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=88";
@@ -564,13 +564,8 @@ export default function Home() {
               <div className="hero-note"><span className="note-dot" /> Available for thoughtful collaborations</div>
               <div className="asset-note">View the current 2026 CV above for a complete profile of experience and capabilities.</div>
             </div>
-            <div className="hero-portrait reveal reveal-delay-2">
-              <div className="portrait-frame">
-                <div className="portrait-index">RM / 01</div>
-                <img src={PROFILE_PLACEHOLDER} alt="Professional headshot of Regaugetswe Mphahlele" />
-                <div className="portrait-caption"><span>Professional profile</span><strong>Regaugetswe Mphahlele</strong></div>
-              </div>
-              <div className="portrait-annotation"><span>01</span><p>Curious by nature.<br />Precise by practice.</p></div>
+            <div className="hero-portrait hero-portrait--clean reveal reveal-delay-2">
+              <img className="hero-portrait-image" src={PROFILE_PLACEHOLDER} alt="Professional headshot of Regaugetswe Mphahlele" />
             </div>
           </div>
           <button className="scroll-cue" type="button" onClick={() => scrollTo("about")} aria-label="Scroll to about section"><span>Scroll to explore</span><ArrowDown size={15} /></button>
