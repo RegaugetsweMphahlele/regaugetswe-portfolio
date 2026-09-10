@@ -127,3 +127,17 @@ The header now follows the page sequence Home, About, Skills, Experience, Educat
 
 The attached ZIP images are mapped to the matching cards and displayed with the existing card sizing and responsive layout. The header action downloads the supplied CV, “Aspiring” no longer appears in the source, Skills text has increased weight, and dark-mode readable copy is forced to white while accents remain unchanged. TypeScript and production build checks pass, with full desktop and mobile previews validated.
 
+
+
+## Repeated project-card image replacement
+
+- [ ] Inventory the newly attached Cards.zip and confirm each labeled filename.
+- [ ] Replace every project-card image with the correct matching asset.
+- [ ] Validate all image loads, card mappings, dimensions, and responsive layouts.
+
+
+
+## Latest Cards.zip validation
+
+The newly attached Cards.zip was extracted and its 14 labeled images were matched to the corresponding project cards and uploaded as optimized web assets. Desktop and mobile full-page previews confirm the card images remain aligned within the existing layout, with TypeScript and production build checks passing.
+
