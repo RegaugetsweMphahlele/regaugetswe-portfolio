@@ -557,3 +557,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .dark .contact-form label,
 .dark .footer-copy { color: #ffffff; }
 .dark .button--ghost, .dark .button--ghost svg { color: #ffffff; }
+
+
+/* Final dark-mode name treatment: readable hero text stays white; accents remain decorative. */
+.dark .hero h1,
+.dark .hero h1 em,
+.dark .hero-pretitle,
+.dark .hero-lede,
+.dark .type-line,
+.dark .type-line strong,
+.dark .hero-note,
+.dark .asset-note,
+.dark .scroll-cue,
+.dark .scroll-cue span { color: #ffffff; }

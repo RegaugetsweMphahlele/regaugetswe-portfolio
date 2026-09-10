@@ -170,3 +170,17 @@ The active navigation now tracks the section crossing a stable viewport anchor a
 
 Dark/night mode now explicitly keeps the primary readable text white wherever the light presentation uses white text, including hero copy, headings, project and certificate content, Skills, contact details, and the outlined CV action. Decorative green and gold accents remain unchanged. TypeScript, production build, and desktop/mobile previews pass.
 
+
+
+## Dark-mode name color refinement
+
+- [ ] Keep the hero name and other readable green text white in dark/night mode.
+- [ ] Preserve green only for decorative accents, indicators, and borders.
+- [ ] Validate desktop/mobile rendering and production build.
+
+
+
+## Dark-mode name validation
+
+The hero name now remains white in dark/night mode, including the italic surname, and readable hero text remains white. Decorative gold and green accents are preserved. TypeScript and production build checks pass.
+
