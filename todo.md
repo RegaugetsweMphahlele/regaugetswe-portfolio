@@ -79,3 +79,16 @@ All 35 uploaded storage paths returned HTTP 200, including the transparent hero 
 
 The hero portrait is now image-only with no portrait frame, no image captions, no embedded clothing words, and an emerald-integrated background that matches the hero treatment. Desktop and mobile previews remain responsive, and TypeScript plus production build checks pass.
 
+
+
+## Hero portrait alignment refinement
+
+- [ ] Increase the desktop hero portrait size slightly and move it upward to align with the name and summary.
+- [ ] Preserve balanced mobile spacing and validate the updated hero at desktop and mobile widths.
+
+
+
+## Hero portrait alignment validation
+
+The portrait is now larger and positioned higher on desktop so it aligns more closely with the name and summary. Mobile spacing remains balanced, and the updated hero passes desktop/mobile preview checks plus TypeScript and production build validation.
+

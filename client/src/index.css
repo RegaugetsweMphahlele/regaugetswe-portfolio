@@ -453,7 +453,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 
 /* Clean hero portrait treatment: image only, no frame or embedded typography; the mask softens the subject boundary into the emerald hero field. */
-.hero-portrait--clean { display: flex; align-items: flex-end; justify-content: center; width: min(100%, 390px); min-height: 470px; }
-.hero-portrait--clean .hero-portrait-image { display: block; width: min(100%, 370px); height: auto; max-height: 570px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 24px 34px rgba(0, 10, 8, .22)); }
-@media (max-width: 1020px) { .hero-portrait--clean { max-width: 330px; min-height: 400px; } .hero-portrait--clean .hero-portrait-image { width: min(100%, 315px); } }
-@media (max-width: 760px) { .hero-portrait--clean { width: min(76vw, 310px); min-height: 360px; margin: 52px auto 0; } .hero-portrait--clean .hero-portrait-image { width: 100%; } }
+.hero-portrait--clean { display: flex; align-items: flex-end; justify-content: center; width: min(100%, 440px); min-height: 520px; transform: translateY(-28px); }
+.hero-portrait--clean .hero-portrait-image { display: block; width: min(100%, 420px); height: auto; max-height: 620px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 24px 34px rgba(0, 10, 8, .22)); }
+@media (max-width: 1020px) { .hero-portrait--clean { max-width: 360px; min-height: 430px; transform: translateY(-18px); } .hero-portrait--clean .hero-portrait-image { width: min(100%, 350px); } }
+@media (max-width: 760px) { .hero-portrait--clean { width: min(82vw, 330px); min-height: 380px; margin: 42px auto 0; transform: translateY(-8px); } .hero-portrait--clean .hero-portrait-image { width: 100%; } }
