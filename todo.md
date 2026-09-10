@@ -211,3 +211,18 @@ Mphahlele now uses the gold accent color in dark/night mode while Regaugetswe an
 
 Dark mode now preserves established gold text roles, including Mphahlele, section eyebrows, project metadata, certificate links, timeline/company accents, and other gold labels. Only readable green text is forced to white. TypeScript, production build, and hero preview checks pass.
 
+
+
+## Dark-mode gold hierarchy refinement
+
+- [ ] Make “Building useful systems with a human point of view.” gold in dark mode.
+- [ ] Make certificate names gold in dark mode.
+- [ ] Keep Mphahlele gold in dark mode.
+- [ ] Validate the color hierarchy and rebuild.
+
+
+
+## Dark-mode gold treatment validation
+
+Dark mode now keeps the footer statement “Building useful systems with a human point of view.”, all certificate names, and Mphahlele gold, matching the light-theme hierarchy. Other readable text remains white, and the existing layout remains unchanged. TypeScript, production build, and full desktop preview checks pass.
+

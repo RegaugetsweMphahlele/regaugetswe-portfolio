@@ -603,3 +603,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .dark .cert-card-top,
 .dark .cert-link,
 .dark .feature-mark { color: #e0be85; }
+
+
+/* Requested dark-mode gold accents: footer statement and certificate names match the light theme. */
+.dark .footer-copy p,
+.dark .cert-card h3,
+.dark .hero h1 em { color: #e0be85; }
