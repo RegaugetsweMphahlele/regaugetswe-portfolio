@@ -1,7 +1,7 @@
 /*
  * Editorial Atelier direction: contemporary editorial portfolio design with cream paper,
  * deep emerald ink, warm-gold annotations, asymmetric evidence-led layouts, and restrained motion.
- * This page keeps logo, CV, headshot, and project screenshots as replaceable slots.
+ * This page uses curated uploaded assets while preserving the Editorial Atelier system.
  */
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
@@ -42,7 +42,7 @@ import {
 } from "lucide-react";
 
 const HERO_TEXTURE = "/manus-storage/regaugetswe-hero-texture_cfa8fe7a.png";
-const PROFILE_PLACEHOLDER = "/manus-storage/regaugetswe-profile-placeholder_e71ca5c7.png";
+const PROFILE_PLACEHOLDER = "/manus-storage/hero-headshot-transparent_271a6954.png";
 const MENACARE_THUMB = "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=88";
 const CIVICTECH_THUMB = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=88";
 const COMMUNITY_THUMB = "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=88";
@@ -61,13 +61,28 @@ const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1558655146-9f40138e
 const BUDGET_PLANNER_THUMB = "/manus-storage/fintech-ui_e8a873f4.jpg";
 const CAREERBUDDY_THUMB = "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=88";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
-const CV_PLACEHOLDER = "/manus-storage/regaugetswe-Mphahlele-CV-placeholder_1f8fd019.pdf";
+const CV_PLACEHOLDER = "/manus-storage/Regaugetswe_Mphahlele_CV_2026_61300700.pdf";
 const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
-const DEANS_CERTIFICATE_PDF = "/manus-storage/Certificate-of-Achievement_c11d4ba4.pdf";
-const AI_FOR_EVERYONE_PDF = "/manus-storage/AI-For-Everyone_bf7b41dc.pdf";
-const AI_FOR_EVERYONE_THUMB = "/manus-storage/AI-For-Everyone-thumb_704376e5.png";
-const GENERATIVE_AI_LLMS_PDF = "/manus-storage/Generative-AI-LLMs_1507c04e.pdf";
-const GENERATIVE_AI_LLMS_THUMB = "/manus-storage/Generative-AI-LLMs-thumb_8cd07d73.png";
+const DEANS_CERTIFICATE_PDF = "/manus-storage/certificate-of-achievement_815c79fa.pdf";
+const GIRLCODE_PROOF = "/manus-storage/GirlCode_93bd959c.png";
+const AI_FOR_EVERYONE_PDF = "/manus-storage/ai-for-everyone_bc9dfb26.pdf";
+const AI_FOR_EVERYONE_THUMB = "/manus-storage/ai-for-everyone-thumb_00815ea0.png";
+const GENERATIVE_AI_LLMS_PDF = "/manus-storage/generative-ai-with-large-language-models_3024cab2.pdf";
+const GENERATIVE_AI_LLMS_THUMB = "/manus-storage/generative-ai-with-large-language-models-thumb_5162ecb8.png";
+const CERTIFICATE_ASSETS = {
+  introAi: ["/manus-storage/introduction-to-artificial-intelligence-ai_c8f299cf.pdf", "/manus-storage/introduction-to-artificial-intelligence-ai-thumb_d7599236.png"],
+  introAiShort: ["/manus-storage/introduction-to-ai_5b248e05.pdf", "/manus-storage/introduction-to-ai-thumb_6bc16241.png"],
+  python: ["/manus-storage/python-for-data-science-ai-development_870dff8f.pdf", "/manus-storage/python-for-data-science-ai-development-thumb_25c3471d.png"],
+  supervised: ["/manus-storage/supervised-machine-learning_e4d18e2d.pdf", "/manus-storage/supervised-machine-learning-thumb_5fc5be6d.png"],
+  generative: ["/manus-storage/introduction-to-generative-ai_6230f85e.pdf", "/manus-storage/introduction-to-generative-ai-thumb_6fd3b146.png"],
+  prompt: ["/manus-storage/generative-ai-prompt-engineering-basics_3e744cdd.pdf", "/manus-storage/generative-ai-prompt-engineering-basics-thumb_312f78f0.png"],
+  unsupervised: ["/manus-storage/unsupervised-learning_018bb4ac.pdf", "/manus-storage/unsupervised-learning-thumb_b8c79210.png"],
+  discover: ["/manus-storage/discover-the-art-of-prompting_8c69e080.pdf", "/manus-storage/discover-the-art-of-prompting-thumb_fdc11c90.png"],
+  googleEssentials: ["/manus-storage/google-ai-essentials_79cf07be.pdf", "/manus-storage/google-ai-essentials-thumb_bd089bd0.png"],
+  productivity: ["/manus-storage/maximize-productivity-with-ai-tools_cd12b478.pdf", "/manus-storage/maximize-productivity-with-ai-tools-thumb_9c68f50e.png"],
+  ahead: ["/manus-storage/stay-ahead-of-the-ai-curve_773fcdbf.pdf", "/manus-storage/stay-ahead-of-the-ai-curve-thumb_6a75cf68.png"],
+  responsible: ["/manus-storage/use-ai-responsibly_4ddf1908.pdf", "/manus-storage/use-ai-responsibly-thumb_37fd5b2c.png"],
+};
 
 const navItems = [
   ["Home", "home"],
@@ -284,14 +299,20 @@ type Certification = {
 };
 
 const certifications: Certification[] = [
-  { title: "Introduction to Artificial Intelligence (AI)", issuer: "IBM", meta: "Coursera certification", state: "Certificate slot ready", icon: BrainCircuit },
+  { title: "Introduction to Artificial Intelligence (AI)", issuer: "IBM", meta: "Coursera certification", pdf: CERTIFICATE_ASSETS.introAi[0], thumb: CERTIFICATE_ASSETS.introAi[1], state: "Certificate available", icon: BrainCircuit },
   { title: "AI For Everyone", issuer: "DeepLearning.AI", meta: "Coursera certification", pdf: AI_FOR_EVERYONE_PDF, thumb: AI_FOR_EVERYONE_THUMB, state: "Certificate available", icon: HeartHandshake },
-  { title: "Python for Data Science, AI & Development", issuer: "IBM", meta: "Coursera certification", state: "Certificate slot ready", icon: Terminal },
-  { title: "Supervised Machine Learning: Regression and Classification", issuer: "DeepLearning.AI & Stanford University", meta: "Coursera certification", state: "Certificate slot ready", icon: BrainCircuit },
-  { title: "Introduction to Generative AI", issuer: "Google Cloud", meta: "Coursera certification", state: "Certificate slot ready", icon: Sparkles },
-  { title: "Generative AI: Prompt Engineering Basics", issuer: "IBM", meta: "Coursera certification", state: "Certificate slot ready", icon: Code2 },
+  { title: "Python for Data Science, AI & Development", issuer: "IBM", meta: "Coursera certification", pdf: CERTIFICATE_ASSETS.python[0], thumb: CERTIFICATE_ASSETS.python[1], state: "Certificate available", icon: Terminal },
+  { title: "Supervised Machine Learning: Regression and Classification", issuer: "DeepLearning.AI & Stanford University", meta: "Coursera certification", pdf: CERTIFICATE_ASSETS.supervised[0], thumb: CERTIFICATE_ASSETS.supervised[1], state: "Certificate available", icon: BrainCircuit },
+  { title: "Introduction to Generative AI", issuer: "Google Cloud", meta: "Coursera certification", pdf: CERTIFICATE_ASSETS.generative[0], thumb: CERTIFICATE_ASSETS.generative[1], state: "Certificate available", icon: Sparkles },
+  { title: "Generative AI: Prompt Engineering Basics", issuer: "IBM", meta: "Coursera certification", pdf: CERTIFICATE_ASSETS.prompt[0], thumb: CERTIFICATE_ASSETS.prompt[1], state: "Certificate available", icon: Code2 },
   { title: "Generative AI with Large Language Models", issuer: "DeepLearning.AI & Amazon Web Services", meta: "Coursera certification", pdf: GENERATIVE_AI_LLMS_PDF, thumb: GENERATIVE_AI_LLMS_THUMB, state: "Certificate available", icon: Layers3 },
-  { title: "Unsupervised Learning, Recommenders, Reinforcement Learning", issuer: "DeepLearning.AI & Stanford Online", meta: "Andrew Ng · Completed 24 August 2026", state: "Certificate slot ready", icon: Trophy },
+  { title: "Unsupervised Learning, Recommenders, Reinforcement Learning", issuer: "DeepLearning.AI & Stanford Online", meta: "Andrew Ng · Completed 24 August 2026", pdf: CERTIFICATE_ASSETS.unsupervised[0], thumb: CERTIFICATE_ASSETS.unsupervised[1], state: "Certificate available", icon: Trophy },
+  { title: "Introduction to AI", issuer: "IBM", meta: "Additional AI learning", pdf: CERTIFICATE_ASSETS.introAiShort[0], thumb: CERTIFICATE_ASSETS.introAiShort[1], state: "Certificate available", icon: BrainCircuit },
+  { title: "Discover the Art of Prompting", issuer: "Additional learning", meta: "AI skills certificate", pdf: CERTIFICATE_ASSETS.discover[0], thumb: CERTIFICATE_ASSETS.discover[1], state: "Certificate available", icon: Sparkles },
+  { title: "Google AI Essentials", issuer: "Google", meta: "AI skills certificate", pdf: CERTIFICATE_ASSETS.googleEssentials[0], thumb: CERTIFICATE_ASSETS.googleEssentials[1], state: "Certificate available", icon: BadgeCheck },
+  { title: "Maximize Productivity With AI Tools", issuer: "Additional learning", meta: "AI skills certificate", pdf: CERTIFICATE_ASSETS.productivity[0], thumb: CERTIFICATE_ASSETS.productivity[1], state: "Certificate available", icon: Wrench },
+  { title: "Stay Ahead of the AI Curve", issuer: "Additional learning", meta: "AI skills certificate", pdf: CERTIFICATE_ASSETS.ahead[0], thumb: CERTIFICATE_ASSETS.ahead[1], state: "Certificate available", icon: Layers3 },
+  { title: "Use AI Responsibly", issuer: "Additional learning", meta: "AI skills certificate", pdf: CERTIFICATE_ASSETS.responsible[0], thumb: CERTIFICATE_ASSETS.responsible[1], state: "Certificate available", icon: HeartHandshake },
 ];
 
 const stats = [
@@ -541,13 +562,13 @@ export default function Home() {
                 <a className="button button--ghost" href={CV_PLACEHOLDER} target="_blank" rel="noreferrer" aria-label="View CV PDF">View CV <FileText size={16} /></a>
               </div>
               <div className="hero-note"><span className="note-dot" /> Available for thoughtful collaborations</div>
-              <div className="asset-note">Temporary CV PDF in place · replace it with your final file when ready.</div>
+              <div className="asset-note">View the current 2026 CV above for a complete profile of experience and capabilities.</div>
             </div>
             <div className="hero-portrait reveal reveal-delay-2">
               <div className="portrait-frame">
                 <div className="portrait-index">RM / 01</div>
-                <img src={PROFILE_PLACEHOLDER} alt="Neutral professional profile placeholder for Regaugetswe Mphahlele" />
-                <div className="portrait-caption"><span>Profile image slot</span><strong>Replace with headshot</strong></div>
+                <img src={PROFILE_PLACEHOLDER} alt="Professional headshot of Regaugetswe Mphahlele" />
+                <div className="portrait-caption"><span>Professional profile</span><strong>Regaugetswe Mphahlele</strong></div>
               </div>
               <div className="portrait-annotation"><span>01</span><p>Curious by nature.<br />Precise by practice.</p></div>
             </div>
@@ -625,7 +646,7 @@ export default function Home() {
 
         <section className="section section--dark" id="certifications">
           <div className="container">
-            <SectionHeading index="06" eyebrow="Signals of practice" title="Eight certifications. One practical direction." />
+            <SectionHeading index="06" eyebrow="Signals of practice" title="Fourteen certificates. One practical direction." />
             <div className="cert-grid">
               {certifications.map(({ title, issuer, meta, link, pdf, thumb, state, icon: Icon }, index) => (
                 <article className={`cert-card reveal reveal-delay-${Math.min((index % 3) + 1, 3)}`} key={title}>
@@ -643,7 +664,7 @@ export default function Home() {
         <section className="section section--feature" id="hackathon">
           <div className="container feature-card reveal">
             <div className="feature-mark"><Trophy size={26} /></div>
-            <div><div className="section-kicker"><span>07</span><i /> Highlight</div><h2>Girlcode Hackathon <em>2026</em> Participant</h2><p>As part of a team at the Girlcode Hackathon, co-developed <strong>MenaCare</strong> — a youth-friendly menstrual health experience designed to make education, support, and care feel more approachable.</p></div>
+            <div><div className="section-kicker"><span>07</span><i /> Highlight</div><h2>Girlcode Hackathon <em>2026</em> Participant</h2><p>As part of a team at the Girlcode Hackathon, co-developed <strong>MenaCare</strong> — a youth-friendly menstrual health experience designed to make education, support, and care feel more approachable.</p><img className="feature-proof-image" src={GIRLCODE_PROOF} alt="GirlCode Hackathon supporting proof" /></div>
             <button className="button button--outline" type="button" onClick={() => scrollTo("projects")}>See MenaCare <ArrowUpRight size={16} /></button>
           </div>
         </section>
@@ -686,7 +707,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container footer-top"><LogoSlot footer /><div className="footer-copy"><p>Building useful systems with a human point of view.</p><small>© {new Date().getFullYear()} Regaugetswe Mphahlele. All rights reserved.</small></div><div className="footer-links"><a href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }}>Back to top <ChevronDown size={14} className="rotate-180" /></a><a href="https://github.com/RegaugetsweMphahlele" target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} /></a></div></div>
         <div className="container footer-bottom"><span>Portfolio / Software Development</span><span>Designed in the Editorial Atelier spirit</span><span>South Africa</span></div>
-        <div className="container footer-assets" id="asset-slots"><span>Asset slots: logo · headshot · CV PDF · project screenshots</span><span>Replace supplied files without changing layout</span></div>
+        <div className="container footer-assets" id="asset-slots"><span>Selected work · verified credentials · thoughtful systems</span><span>Portfolio / South Africa</span></div>
       </footer>
     </div>
   );

@@ -43,3 +43,25 @@ Desktop validation shows the header now uses a compact circular mark on the left
 
 The desktop preview confirms Budget AI is presented as the featured project, the Projects and Certifications heading paragraphs have been removed, and the project grid is aligned in three columns with static rounded cards. The mobile preview confirms cards stack into one column, the header remains responsive, and the new section navigation controls fit the narrow layout. TypeScript and production build checks pass.
 
+
+
+## Portfolio.zip asset integration
+
+- [ ] Inventory `/home/ubuntu/upload/Portfolio.zip` and map every labeled file to its portfolio section.
+- [ ] Prepare the highest-quality headshot, CV, certificates, awards, project screenshots, and supporting documents.
+- [ ] Upload and wire all matched assets, removing obsolete placeholders that have been replaced.
+- [ ] Validate image loading, document links, certificate links, broken-link status, responsive layouts, and production build.
+- [ ] Save and deliver the fully integrated checkpoint.
+
+
+
+## Portfolio.zip integration validation notes
+
+The supplied transparent headshot is visible in the hero, the current CV is connected to the View CV action, all fourteen certificate cards display supplied thumbnails and open their corresponding uploaded PDFs, and the GirlCode proof image appears in the hackathon highlight. Desktop and mobile previews show the uploaded assets loading within the existing responsive layout. TypeScript and production build checks pass.
+
+
+
+## Final asset verification
+
+All 35 uploaded storage paths returned HTTP 200, including the transparent hero headshot, CV, GirlCode proof image, fourteen certificate PDFs, and their thumbnails. The desktop and mobile previews show the integrated files within the existing layout, and TypeScript plus production build checks pass. The project is ready for the final checkpoint after the remaining source changes are saved.
+
