@@ -570,3 +570,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .dark .asset-note,
 .dark .scroll-cue,
 .dark .scroll-cue span { color: #ffffff; }
+
+
+/* Keep the surname as the signature gold accent in dark mode. */
+.dark .hero h1 em { color: #e0be85; }

@@ -184,3 +184,16 @@ Dark/night mode now explicitly keeps the primary readable text white wherever th
 
 The hero name now remains white in dark/night mode, including the italic surname, and readable hero text remains white. Decorative gold and green accents are preserved. TypeScript and production build checks pass.
 
+
+
+## Hero surname accent refinement
+
+- [ ] Keep Regaugetswe white in dark/night mode and set Mphahlele to the gold accent color.
+- [ ] Validate the hero and production build without changing other styling.
+
+
+
+## Hero surname accent validation
+
+Mphahlele now uses the gold accent color in dark/night mode while Regaugetswe and the surrounding readable hero text remain white. The hero composition is unchanged, and TypeScript, production build, and desktop preview checks pass.
+
