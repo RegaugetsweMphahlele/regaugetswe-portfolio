@@ -44,23 +44,23 @@ import {
 
 const HERO_TEXTURE = "/manus-storage/regaugetswe-hero-texture_cfa8fe7a.png";
 const PROFILE_PLACEHOLDER = "/manus-storage/hero-headshot-emerald_327d9eb9.png";
-const MENACARE_THUMB = "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=88";
-const CIVICTECH_THUMB = "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=88";
+const MENACARE_THUMB = "/manus-storage/MenaCare_a2b682c6.webp";
+const CIVICTECH_THUMB = "/manus-storage/WesternCape_PublicHospital_28fc6d7b.webp";
 const COMMUNITY_THUMB = "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=88";
-const FITNESS_THUMB = "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=88";
-const BEAUTY_THUMB = "/manus-storage/beauty-salon_fc970af3.jpg";
-const CINEMA_THUMB = "/manus-storage/cinema-projector_f7d73d45.jpg";
-const MARKETING_THUMB = "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=88";
-const PRODUCTIVITY_THUMB = "/manus-storage/ai-assistant_3a0556ae.png";
+const FITNESS_THUMB = "/manus-storage/EliteGym_7bd55531.webp";
+const BEAUTY_THUMB = "/manus-storage/Blossom_nails_57bc7439.webp";
+const CINEMA_THUMB = "/manus-storage/Vixen_Cinema_672e940c.webp";
+const MARKETING_THUMB = "/manus-storage/AdLuxe_Studio_4c589fe2.webp";
+const PRODUCTIVITY_THUMB = "/manus-storage/AiProductivityDashboard_1f40c55d.webp";
 const CODE_THUMB = "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=88";
-const CALCULATOR_THUMB = "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1200&q=88";
-const TASK_THUMB = "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=88";
-const HOTEL_THUMB = "/manus-storage/hotel-booking_67378795.jpg";
-const BRAND_STRATEGY_THUMB = "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=88";
-const ZEROWASTE_THUMB = "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=88";
+const CALCULATOR_THUMB = "/manus-storage/SmartCalculator_2b966403.webp";
+const TASK_THUMB = "/manus-storage/Laravel_Task_Management_4e18d20d.webp";
+const HOTEL_THUMB = "/manus-storage/StayHub_cc7e291a.webp";
+const BRAND_STRATEGY_THUMB = "/manus-storage/BrandStrategy_9edecb36.webp";
+const ZEROWASTE_THUMB = "/manus-storage/ZeroConnect_fb5eec76.webp";
 const BRAND_GUIDE_THUMB = "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=88";
-const BUDGET_PLANNER_THUMB = "/manus-storage/fintech-ui_e8a873f4.jpg";
-const CAREERBUDDY_THUMB = "https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=88";
+const BUDGET_PLANNER_THUMB = "/manus-storage/BudgetPlanner_6b589c91.webp";
+const CAREERBUDDY_THUMB = "/manus-storage/CareerBuddy_f97e30c4.webp";
 const MONOGRAM_MARK = "/manus-storage/regaugetswe-monogram_aec273ab.png";
 const CV_PLACEHOLDER = "/manus-storage/Regaugetswe_Mphahlele_CV_2026_61300700.pdf";
 const BRAND_STRATEGY_PDF = "/manus-storage/Brand-Strategy_351794ca.pdf";
@@ -560,7 +560,7 @@ export default function Home() {
                 {theme === "light" ? <Moon size={17} /> : <Sun size={17} />}
                 <span>{theme === "light" ? "Night" : "Day"}</span>
               </button>
-              <a className="resume-action" href={CV_PLACEHOLDER} target="_blank" rel="noreferrer" aria-label="View resume PDF">View CV <FileText size={15} /></a>
+              <a className="resume-action" href={CV_PLACEHOLDER} download="Regaugetswe_Mphahlele_CV_2026.pdf" aria-label="Download CV PDF">Download CV <FileText size={15} /></a>
               <button className="menu-toggle" type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>
                 {menuOpen ? <X size={20} /> : <Menu size={20} />}
               </button>
