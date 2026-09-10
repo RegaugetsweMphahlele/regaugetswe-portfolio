@@ -92,3 +92,22 @@ The hero portrait is now image-only with no portrait frame, no image captions, n
 
 The portrait is now larger and positioned higher on desktop so it aligns more closely with the name and summary. Mobile spacing remains balanced, and the updated hero passes desktop/mobile preview checks plus TypeScript and production build validation.
 
+
+
+## Attached prompt 3 requirements
+
+- [ ] Make header order match the actual page order and keep every header item inside its container.
+- [ ] Remove the header name and add a search control.
+- [ ] Increase paragraph contrast and weight for inclusive readability.
+- [ ] Limit the animated hero title to Full-Stack Software Developer.
+- [ ] Simplify About supporting copy to Full-Stack Software Developer and remove learner/other labels.
+- [ ] Remove the specified Working Toolkit, Path so far, and Foundations intro paragraphs.
+- [ ] Remove the hero green image block, enlarge the portrait, and raise it to align with the name and summary.
+- [ ] Replace project thumbnails with supplied subject-relevant visuals where available and validate consistent image alignment.
+
+
+
+## Attached prompt 3 validation
+
+The header now follows the page sequence Home, About, Skills, Experience, Education, Certifications, Highlight, Projects, Contact. The logo is retained without the name, a functional search control is included, and the header controls remain contained at desktop and mobile widths. Hero and supporting paragraph text have stronger contrast and weight. The animated hero title is limited to Full-Stack Software Developer, requested supporting intro paragraphs were removed, the portrait is enlarged and raised, and the green image block is softened away. Project thumbnails use a consistent 220px image window and cover crop. TypeScript and production build checks pass, with desktop and mobile previews validated.
+

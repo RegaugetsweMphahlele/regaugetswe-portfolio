@@ -32,6 +32,7 @@ import {
   Phone,
   Plus,
   Send,
+  Search,
   Sparkles,
   Sun,
   Terminal,
@@ -89,8 +90,10 @@ const navItems = [
   ["About", "about"],
   ["Skills", "skills"],
   ["Experience", "experience"],
-  ["Projects", "projects"],
+  ["Education", "education"],
   ["Certifications", "certifications"],
+  ["Highlight", "hackathon"],
+  ["Projects", "projects"],
   ["Contact", "contact"],
 ] as const;
 
@@ -420,7 +423,9 @@ export default function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [openProject, setOpenProject] = useState<string | null>(null);
-  const taglines = useMemo(() => ["Software Engineer", "Full-Stack Web Developer", "Creative Technologist", "UX/UI Designer", "AI Enthusiast", "Problem Solver"], []);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const taglines = useMemo(() => ["Full-Stack Software Developer"], []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -497,6 +502,21 @@ export default function Home() {
     setMenuOpen(false);
   };
 
+  const submitSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return;
+    const section = navItems.find(([label]) => label.toLowerCase().includes(query));
+    if (section) {
+      scrollTo(section[1]);
+    } else {
+      const match = Array.from(document.querySelectorAll("h1, h2, h3, p, .skill-pill")).find((element) => element.textContent?.toLowerCase().includes(query)) as HTMLElement | undefined;
+      match?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    setSearchOpen(false);
+    setSearchQuery("");
+  };
+
   const submitContact = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormStatus("sending");
@@ -525,7 +545,6 @@ export default function Home() {
         <div className="header-inner">
           <a className="brand" href="#home" onClick={(event) => { event.preventDefault(); scrollTo("home"); }} aria-label="Regaugetswe Mphahlele home">
             <LogoSlot compact />
-            <span className="brand-copy"><strong>Regaugetswe Mphahlele</strong></span>
           </a>
           <nav className={`main-nav ${menuOpen ? "is-open" : ""}`} aria-label="Primary navigation">
             {navItems.map(([label, id]) => (
@@ -535,6 +554,8 @@ export default function Home() {
             ))}
           </nav>
             <div className="header-actions">
+              {searchOpen && <form className="header-search" onSubmit={submitSearch}><input autoFocus value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search" aria-label="Search portfolio" /></form>}
+              <button className="search-toggle" type="button" aria-label={searchOpen ? "Close search" : "Open search"} onClick={() => setSearchOpen((open) => !open)}><Search size={17} /></button>
               <button className="theme-toggle" type="button" aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
                 {theme === "light" ? <Moon size={17} /> : <Sun size={17} />}
                 <span>{theme === "light" ? "Night" : "Day"}</span>
@@ -573,11 +594,11 @@ export default function Home() {
 
         <section className="section section--about" id="about">
           <div className="container about-layout">
-            <SectionHeading index="02" eyebrow="A little context" title="Thoughtful technology, grounded in people." intro="An aspiring Software Engineer and Creative Technologist with an ICT qualification in Multimedia Applications and practical experience across responsive web development, digital brand identity, and user focused design." />
+            <SectionHeading index="02" eyebrow="A little context" title="Full-Stack Software Developer" />
             <div className="about-body reveal reveal-delay-1">
               <p className="lead-paragraph">I enjoy working where technology, communication, and visual thinking meet.</p>
               <p>My experience includes developing and maintaining business websites, contributing to full stack applications, shaping digital brand identities, and collaborating on projects that respond to real needs. I bring curiosity, care, and a practical mindset to each brief, supported by industry recognised certifications in artificial intelligence and Python.</p>
-              <div className="about-signature"><span>—</span><span>Regaugetswe Mphahlele</span><small>Developer / learner / problem solver</small></div>
+              <div className="about-signature"><span>—</span><span>Regaugetswe Mphahlele</span><small>Full-Stack Software Developer</small></div>
             </div>
           </div>
           <div className="container stats-grid">
@@ -593,7 +614,7 @@ export default function Home() {
 
         <section className="section section--sage" id="skills">
           <div className="container">
-            <SectionHeading index="03" eyebrow="Working toolkit" title="A practical stack with room to grow." intro="The technologies, creative tools, and working habits I use to turn ideas into clear, useful digital experiences." />
+            <SectionHeading index="03" eyebrow="Working toolkit" title="A practical stack with room to grow." />
             <div className="skills-layout">
               <div className="skill-intro reveal"><div className="skill-quote">“<span>Good work is part craft, part curiosity, and a lot of careful listening.</span>”</div><div className="skill-caption">How I like to work</div></div>
               <div className="skills-groups">
@@ -611,7 +632,7 @@ export default function Home() {
 
         <section className="section section--experience" id="experience">
           <div className="container">
-            <SectionHeading index="04" eyebrow="The path so far" title="Learning through real delivery." intro="Experience shaped by client work, structured teams, and the willingness to keep asking better questions." />
+            <SectionHeading index="04" eyebrow="The path so far" title="Learning through real delivery." />
             <div className="timeline">
               {experience.map((item, index) => (
                 <article className={`timeline-item reveal reveal-delay-${index + 1}`} key={item.role}>
@@ -629,7 +650,7 @@ export default function Home() {
 
         <section className="section section--cream" id="education">
           <div className="container education-layout">
-            <SectionHeading index="05" eyebrow="Foundations" title="Education that connects design and technology." intro="A multimedia-first foundation with a growing focus on software systems and applied intelligence." />
+            <SectionHeading index="05" eyebrow="Foundations" title="Education that connects design and technology." />
             <div className="education-list reveal reveal-delay-1">
               <div className="education-item"><div className="education-icon"><GraduationCap size={20} /></div><div><span className="education-year">Completed 2025</span><h3>Cape Peninsula University of Technology</h3><p>Diploma in Information Communication Technology, Multimedia Applications</p></div></div>
               <div className="education-item"><div className="education-icon"><FileCode2 size={20} /></div><div><span className="education-year">2021</span><h3>Kgagatlou Secondary School</h3><p>Senior Certificate</p></div></div>

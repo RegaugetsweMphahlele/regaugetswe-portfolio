@@ -457,3 +457,30 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-portrait--clean .hero-portrait-image { display: block; width: min(100%, 420px); height: auto; max-height: 620px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 24px 34px rgba(0, 10, 8, .22)); }
 @media (max-width: 1020px) { .hero-portrait--clean { max-width: 360px; min-height: 430px; transform: translateY(-18px); } .hero-portrait--clean .hero-portrait-image { width: min(100%, 350px); } }
 @media (max-width: 760px) { .hero-portrait--clean { width: min(82vw, 330px); min-height: 380px; margin: 42px auto 0; transform: translateY(-8px); } .hero-portrait--clean .hero-portrait-image { width: 100%; } }
+
+
+/* Prompt refinement: compact, fully contained navigation; visible body copy; and a softly feathered image-only hero portrait. */
+.header-inner { width: min(1400px, calc(100% - 56px)); grid-template-columns: 52px minmax(0, 1fr) auto; gap: 14px; overflow: hidden; }
+.brand { min-width: 44px; }
+.main-nav { gap: 2px; min-width: 0; padding-inline: 6px; overflow: hidden; }
+.main-nav a { padding-inline: clamp(6px, .75vw, 11px); font-size: 9px; white-space: nowrap; }
+.header-actions { min-width: 0; gap: 8px; }
+.search-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 auto; border: 1px solid color-mix(in srgb, var(--gold) 42%, var(--line)); border-radius: 50%; background: color-mix(in srgb, var(--paper) 55%, transparent); color: var(--ink); transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease; }
+.search-toggle:hover { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 13%, transparent); }
+.search-toggle:active { transform: scale(.97); }
+.header-search { width: 120px; flex: 0 1 120px; }
+.header-search input { width: 100%; height: 36px; padding: 0 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); font-size: 11px; outline: 0; }
+.header-search input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 18%, transparent); }
+.hero-lede, .section-heading p, .about-body p, .timeline-card > p:last-child, .education-item p, .feature-card p, .project-description { font-weight: 550; }
+.hero-lede { color: #dcebe4; }
+.section-heading p, .about-body p, .timeline-card > p:last-child, .education-item p, .feature-card p, .project-description { color: color-mix(in srgb, var(--ink-soft) 84%, var(--ink)); }
+.hero-portrait--clean { width: min(100%, 480px); min-height: 560px; transform: translateY(-46px); }
+.hero-portrait--clean .hero-portrait-image { width: min(100%, 460px); max-height: 660px; -webkit-mask-image: radial-gradient(ellipse 68% 77% at 50% 50%, #000 56%, transparent 100%); mask-image: radial-gradient(ellipse 68% 77% at 50% 50%, #000 56%, transparent 100%); }
+@media (max-width: 1120px) { .main-nav a { padding-inline: 5px; font-size: 8px; } .resume-action { display: none; } .hero-portrait--clean { max-width: 400px; min-height: 470px; transform: translateY(-30px); } .hero-portrait--clean .hero-portrait-image { width: min(100%, 390px); } }
+@media (max-width: 760px) { .header-inner { width: min(100% - 36px, 620px); grid-template-columns: auto 1fr auto; overflow: visible; } .main-nav { overflow: visible; } .search-toggle { width: 36px; height: 36px; } .header-search { position: absolute; top: 70px; right: 18px; z-index: 5; width: 180px; } .hero-portrait--clean { width: min(88vw, 360px); min-height: 410px; margin: 30px auto 0; transform: translateY(-12px); } .hero-portrait--clean .hero-portrait-image { width: 100%; max-height: none; } }
+
+
+/* Final prompt polish: the hero image fades before its rectangular source boundary, while project thumbnails share one stable crop window. */
+.hero-portrait--clean .hero-portrait-image { -webkit-mask-image: radial-gradient(ellipse 50% 59% at 50% 55%, #000 45%, rgba(0,0,0,.96) 58%, transparent 80%); mask-image: radial-gradient(ellipse 50% 59% at 50% 55%, #000 45%, rgba(0,0,0,.96) 58%, transparent 80%); }
+.project-thumb { height: 220px; min-height: 220px; flex: 0 0 220px; }
+.project-thumb--image { background-size: cover; background-position: center center; }
