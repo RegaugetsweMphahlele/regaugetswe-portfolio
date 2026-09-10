@@ -521,3 +521,39 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .dark .about-body p { color: #ffffff; }
 .dark .main-nav a:hover, .dark .main-nav a.is-active { background: rgba(255,255,255,.14); }
 .dark .main-nav a:hover::after, .dark .main-nav a.is-active::after { background: var(--gold-deep); }
+
+
+/* Theme consistency: readable text that is white in the light presentation stays pure white in night mode. */
+.dark .hero-lede,
+.dark .type-line,
+.dark .type-label,
+.dark .hero-note,
+.dark .asset-note,
+.dark .section-heading h2,
+.dark .section-heading p,
+.dark .about-body p,
+.dark .about-body strong,
+.dark .timeline-card h3,
+.dark .timeline-card p,
+.dark .timeline-card .timeline-meta,
+.dark .education-item h3,
+.dark .education-item p,
+.dark .feature-card h3,
+.dark .feature-card p,
+.dark .project-title,
+.dark .project-description,
+.dark .project-proof,
+.dark .project-topline,
+.dark .cert-title,
+.dark .cert-issuer,
+.dark .cert-meta,
+.dark .skill-group h3,
+.dark .skill-caption,
+.dark .skill-quote,
+.dark .skill-pill,
+.dark .contact-details,
+.dark .contact-details p,
+.dark .contact-details a,
+.dark .contact-form label,
+.dark .footer-copy { color: #ffffff; }
+.dark .button--ghost, .dark .button--ghost svg { color: #ffffff; }

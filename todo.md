@@ -156,3 +156,17 @@ The newly attached Cards.zip was extracted and its 14 labeled images were matche
 
 The active navigation now tracks the section crossing a stable viewport anchor across Home, About, Skills, Experience, Education, Certifications, Highlight, Projects, and Contact, and navigation clicks activate their target immediately. Dark-mode readable labels, navigation text, project copy, certificate text, timeline text, and Skills text are white; gold and green remain available for decorative accents and borders. TypeScript, production build, and desktop/mobile previews pass.
 
+
+
+## Theme text consistency
+
+- [ ] Preserve white readable text in dark/night mode wherever the corresponding light-mode text is white.
+- [ ] Keep green and gold limited to decorative accents, controls, borders, and indicators.
+- [ ] Validate both theme states and rebuild the portfolio.
+
+
+
+## Theme consistency validation
+
+Dark/night mode now explicitly keeps the primary readable text white wherever the light presentation uses white text, including hero copy, headings, project and certificate content, Skills, contact details, and the outlined CV action. Decorative green and gold accents remain unchanged. TypeScript, production build, and desktop/mobile previews pass.
+
