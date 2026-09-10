@@ -111,3 +111,19 @@ The portrait is now larger and positioned higher on desktop so it aligns more cl
 
 The header now follows the page sequence Home, About, Skills, Experience, Education, Certifications, Highlight, Projects, Contact. The logo is retained without the name, a functional search control is included, and the header controls remain contained at desktop and mobile widths. Hero and supporting paragraph text have stronger contrast and weight. The animated hero title is limited to Full-Stack Software Developer, requested supporting intro paragraphs were removed, the portrait is enlarged and raised, and the green image block is softened away. Project thumbnails use a consistent 220px image window and cover crop. TypeScript and production build checks pass, with desktop and mobile previews validated.
 
+
+
+## Requested-only update continuation
+
+- [ ] Use the already attached project-image ZIP and map every image to the matching card by filename.
+- [ ] Replace all project card images without changing the existing card layout or responsiveness.
+- [ ] Change the header CV action to direct Download CV.
+- [ ] Remove “Aspiring” everywhere, increase Skills text weight, and make dark-mode readable text white.
+- [ ] Validate image links, CV download, active navigation, contrast, build, and responsive layouts.
+
+
+
+## Requested-only validation
+
+The attached ZIP images are mapped to the matching cards and displayed with the existing card sizing and responsive layout. The header action downloads the supplied CV, “Aspiring” no longer appears in the source, Skills text has increased weight, and dark-mode readable copy is forced to white while accents remain unchanged. TypeScript and production build checks pass, with full desktop and mobile previews validated.
+

@@ -484,3 +484,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-portrait--clean .hero-portrait-image { -webkit-mask-image: radial-gradient(ellipse 50% 59% at 50% 55%, #000 45%, rgba(0,0,0,.96) 58%, transparent 80%); mask-image: radial-gradient(ellipse 50% 59% at 50% 55%, #000 45%, rgba(0,0,0,.96) 58%, transparent 80%); }
 .project-thumb { height: 220px; min-height: 220px; flex: 0 0 220px; }
 .project-thumb--image { background-size: cover; background-position: center center; }
+
+
+/* Requested accessibility-only refinement: stronger Skills text and white readable copy in dark mode. */
+.skill-pill { font-weight: 650; color: var(--ink); }
+.dark .main-nav a { color: #ffffff; }
+.dark .main-nav a:hover, .dark .main-nav a.is-active { color: #ffffff; background: rgba(255,255,255,.13); }
+.dark .skill-group h3, .dark .skill-caption, .dark .skill-quote > span, .dark .skill-pill { color: #ffffff; }
+.dark .skill-pill { border-color: rgba(255,255,255,.4); font-weight: 700; }
+.dark .skill-pill:hover { color: #ffffff; border-color: #e0be85; background: rgba(224,190,133,.2); }
+.dark .section-heading p, .dark .about-body p, .dark .timeline-card > p:last-child, .dark .education-item p, .dark .feature-card p, .dark .section-asset-note, .dark .skill-caption, .dark .project-description { color: #ffffff; }
