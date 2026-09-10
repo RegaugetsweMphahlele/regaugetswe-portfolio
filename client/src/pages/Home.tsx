@@ -452,16 +452,34 @@ export default function Home() {
   }, [isDeleting, taglineIndex, taglineText, taglines]);
 
   useEffect(() => {
-    const sections = navItems.map(([, id]) => document.getElementById(id));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target.id) setActiveSection(visible.target.id);
-      },
-      { rootMargin: "-25% 0px -58% 0px", threshold: [0.08, 0.2, 0.5] },
-    );
-    sections.forEach((section) => section && observer.observe(section));
-    return () => observer.disconnect();
+    const sections = navItems
+      .map(([, id]) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+    let frame = 0;
+
+    const updateActiveSection = () => {
+      const anchor = Math.min(240, Math.max(112, window.innerHeight * 0.28));
+      const passed = sections.filter((section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= anchor && rect.bottom > anchor;
+      });
+      const next = passed.at(-1) ?? sections.find((section) => section.getBoundingClientRect().bottom > anchor) ?? sections[0];
+      if (next?.id) setActiveSection(next.id);
+    };
+
+    const onScroll = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -498,6 +516,7 @@ export default function Home() {
   }, []);
 
   const scrollTo = (id: string) => {
+    setActiveSection(id);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     setMenuOpen(false);
   };

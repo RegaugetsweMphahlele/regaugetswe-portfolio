@@ -141,3 +141,18 @@ The attached ZIP images are mapped to the matching cards and displayed with the 
 
 The newly attached Cards.zip was extracted and its 14 labeled images were matched to the corresponding project cards and uploaded as optimized web assets. Desktop and mobile full-page previews confirm the card images remain aligned within the existing layout, with TypeScript and production build checks passing.
 
+
+
+## Navigation and dark-mode refinement
+
+- [ ] Audit active-section observer and header nav state across Home, About, Skills, Experience, Education, Certifications, Highlight, Projects, and Contact.
+- [ ] Ensure hover and active navigation styles remain visible and synchronized in every section.
+- [ ] Change readable green dark-mode text to white while preserving decorative green accents.
+- [ ] Validate desktop and mobile behavior and run the production build.
+
+
+
+## Navigation and dark-mode validation
+
+The active navigation now tracks the section crossing a stable viewport anchor across Home, About, Skills, Experience, Education, Certifications, Highlight, Projects, and Contact, and navigation clicks activate their target immediately. Dark-mode readable labels, navigation text, project copy, certificate text, timeline text, and Skills text are white; gold and green remain available for decorative accents and borders. TypeScript, production build, and desktop/mobile previews pass.
+
