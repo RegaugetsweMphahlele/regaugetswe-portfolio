@@ -574,3 +574,32 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Keep the surname as the signature gold accent in dark mode. */
 .dark .hero h1 em { color: #e0be85; }
+
+
+/* Preserve the original gold hierarchy in night mode; only green readable copy is white. */
+.dark .eyebrow,
+.dark .section-kicker,
+.dark .section-heading h2 em,
+.dark .feature-card h2 em,
+.dark .skill-caption,
+.dark .skill-group-head span,
+.dark .about-signature,
+.dark .stat-top,
+.dark .timeline-company,
+.dark .timeline-marker,
+.dark .education-year,
+.dark .award-card,
+.dark .latest-project-note span,
+.dark .latest-project-note svg,
+.dark .project-count,
+.dark .project-topline,
+.dark .project-proof,
+.dark .project-back-top,
+.dark .project-back-top button,
+.dark .project-back > a,
+.dark .project-pdf-button,
+.dark .project-repo-button,
+.dark .award-link,
+.dark .cert-card-top,
+.dark .cert-link,
+.dark .feature-mark { color: #e0be85; }

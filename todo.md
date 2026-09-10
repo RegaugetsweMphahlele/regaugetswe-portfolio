@@ -197,3 +197,17 @@ The hero name now remains white in dark/night mode, including the italic surname
 
 Mphahlele now uses the gold accent color in dark/night mode while Regaugetswe and the surrounding readable hero text remain white. The hero composition is unchanged, and TypeScript, production build, and desktop preview checks pass.
 
+
+
+## Corrected dark-mode color hierarchy
+
+- [ ] Preserve every existing gold text element in dark/night mode.
+- [ ] Change only readable green text to white.
+- [ ] Validate the hero name hierarchy and rebuild without changing layout.
+
+
+
+## Corrected gold hierarchy validation
+
+Dark mode now preserves established gold text roles, including Mphahlele, section eyebrows, project metadata, certificate links, timeline/company accents, and other gold labels. Only readable green text is forced to white. TypeScript, production build, and hero preview checks pass.
+
